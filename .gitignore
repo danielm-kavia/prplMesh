@@ -26,3 +26,4 @@ ipkg-*/
 .cache/
 .clangd
 compile_commands.json
+.file_activity_report.json
