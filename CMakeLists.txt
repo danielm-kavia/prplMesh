@@ -75,6 +75,44 @@ include(GNUInstallDirs)
 # Add global project cmake modules path
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+# Ambiorix (amx*) dependency stack
+# --------------------------------
+# prplMesh can optionally build NBAPI and/or WHM (wbapi/bwl WHM backend) which require Ambiorix libs:
+#   - amxb, amxc, amxd, amxp  (needed for WHM/wbapi)
+#   - amxo, libamxrt          (additional libs needed for NBAPI implementation)
+#
+# In minimal native CI environments these libraries are often not available. Instead of failing the
+# whole configure step, automatically disable the features that require them.
+if (ENABLE_NBAPI OR USE_PRPLMESH_WHM)
+    find_package(amxb QUIET)
+    find_package(amxc QUIET)
+    find_package(amxd QUIET)
+    find_package(amxp QUIET)
+
+    # WHM requires at least amxb/amxc/amxd/amxp
+    if (USE_PRPLMESH_WHM AND (NOT amxb_FOUND OR NOT amxc_FOUND OR NOT amxd_FOUND OR NOT amxp_FOUND))
+        message(WARNING
+            "Ambiorix libraries (amxb/amxc/amxd/amxp) not found; disabling USE_PRPLMESH_WHM to allow "
+            "native build and unit tests to proceed."
+        )
+        set(USE_PRPLMESH_WHM OFF CACHE BOOL "Use prplMesh Wireless Hardware Manager" FORCE)
+    endif()
+
+    # NBAPI implementation requires the above + amxo + libamxrt
+    if (ENABLE_NBAPI)
+        find_package(amxo QUIET)
+        find_package(libamxrt QUIET)
+
+        if (NOT amxb_FOUND OR NOT amxc_FOUND OR NOT amxd_FOUND OR NOT amxp_FOUND OR NOT amxo_FOUND OR NOT libamxrt_FOUND)
+            message(WARNING
+                "Ambiorix libraries required for ENABLE_NBAPI not found; disabling ENABLE_NBAPI to allow "
+                "native build and unit tests to proceed."
+            )
+            set(ENABLE_NBAPI OFF CACHE BOOL "Build the northbound (high-level) API" FORCE)
+        endif()
+    endif()
+endif()
+
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set (CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "default install path" FORCE)
 endif()

@@ -159,11 +159,20 @@ else()
 
 endif()
 
-find_package(amxb REQUIRED)
-find_package(amxc REQUIRED)
-find_package(amxd REQUIRED)
-find_package(amxp REQUIRED)
-list(APPEND BPL_LIBS amxb amxc amxd amxp)
+# Ambiorix (amx*) is only needed when building NBAPI implementation and/or WHM (wbapi).
+# Native linux builds (including unit test builds) can work without Ambiorix.
+set(BPL_USE_AMBIORIX_LIBS OFF)
+if (USE_PRPLMESH_WHM OR ENABLE_NBAPI)
+    set(BPL_USE_AMBIORIX_LIBS ON)
+endif()
+
+if (BPL_USE_AMBIORIX_LIBS)
+    find_package(amxb REQUIRED)
+    find_package(amxc REQUIRED)
+    find_package(amxd REQUIRED)
+    find_package(amxp REQUIRED)
+    list(APPEND BPL_LIBS amxb amxc amxd amxp)
+endif()
 
 # BPL pwhm DM via wbapi
 if (USE_PRPLMESH_WHM)
@@ -186,11 +195,15 @@ if (USE_PRPLMESH_WHM)
 
     list(APPEND BPL_LIBS wbapi)
 else ()
-    file(GLOB_RECURSE bpl_platform_sources
-        ${MODULE_PATH}/*/linux/*.c*
-	    ${MODULE_PATH}/service_prioritization/dummy/service_prio_utils_dummy.c*
-        ${MODULE_PATH}/cfg/dummy/*.c*
-    )
+    # Only override BPL sources for the native linux build without WHM.
+    # Do NOT pull in cfg/dummy, because bpl_cfg_dummy.cpp depends directly on Ambiorix headers/libs.
+    if (TARGET_PLATFORM STREQUAL "linux")
+        file(GLOB_RECURSE bpl_platform_sources
+            ${MODULE_PATH}/*/linux/*.c*
+            ${MODULE_PATH}/cfg/vendor/*.c*
+            ${MODULE_PATH}/service_prioritization/tc/service_prio_utils_tc.cpp
+        )
+    endif()
 endif()
 
 # BPL configuration via nbapi
