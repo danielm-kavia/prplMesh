@@ -15,11 +15,18 @@ file(GLOB beerocks_agent_sources
     ${MODULE_PATH}/tasks/*.c*
     ${MODULE_PATH}/traffic_separation/*.c*
     ${MODULE_PATH}/gate/*.c*
-    ${MODULE_PATH}/nbapi/*.c*
     ${MODULE_PATH}/*.c*
 )
 
+# NBAPI agent-side sources depend on Ambiorix headers/libraries. They must only be compiled when
+# ENABLE_NBAPI is actually enabled (note that the top-level CMake may force-disable ENABLE_NBAPI
+# when Ambiorix is not found).
+file(GLOB beerocks_agent_nbapi_sources
+    ${MODULE_PATH}/nbapi/*.c*
+)
+
 if (ENABLE_NBAPI)
+    list(APPEND beerocks_agent_sources ${beerocks_agent_nbapi_sources})
     add_subdirectory("nbapi")
 endif()
 
