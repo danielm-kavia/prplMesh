@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/CMakeFiles/googletest"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/CMakeFiles/googletest.rule"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/CMakeFiles/googletest-complete.rule"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/googletest-prefix/src/googletest-stamp/googletest-build.rule"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/googletest-prefix/src/googletest-stamp/googletest-configure.rule"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/googletest-prefix/src/googletest-stamp/googletest-download.rule"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/googletest-prefix/src/googletest-stamp/googletest-install.rule"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/googletest-prefix/src/googletest-stamp/googletest-patch.rule"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/googletest-prefix/src/googletest-stamp/googletest-test.rule"
+		},
+		{
+			"file" : "/home/kavia/workspace/code-generation/prplMesh/build_ctest/googletest-download/googletest-prefix/src/googletest-stamp/googletest-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest"
+		],
+		"name" : "googletest"
+	}
+}
