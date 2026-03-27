@@ -27,6 +27,7 @@ if (BUILD_TESTS)
     set(TEST_PROJECT_NAME ${PROJECT_NAME}_unit_tests)
     set(unit_tests_sources
         ${MODULE_PATH}/unit_tests/configuration_test.cpp
+        ${MODULE_PATH}/unit_tests/configuration_parse_edge_cases_test.cpp
     )
     add_executable(${TEST_PROJECT_NAME} 
         ${unit_tests_sources}
