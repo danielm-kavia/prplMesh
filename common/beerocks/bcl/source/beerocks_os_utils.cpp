@@ -11,14 +11,39 @@
 
 #include <array>
 #include <chrono>
+#include <cstdio>
 #include <fcntl.h>
 #include <linux/limits.h>
+#include <memory>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/utsname.h>
 #include <unistd.h>
 
 #include <easylogging++.h>
+
+namespace {
+
+/**
+ * @brief Unique_ptr deleter for pipes opened with popen().
+ *
+ * Using decltype(&pclose) as the deleter type triggers GCC13 -Wignored-attributes
+ * (and with -Werror, a build failure) because glibc decorates pclose() with
+ * attributes that are ignored when forming the function pointer type.
+ *
+ * A functor deleter avoids embedding that attribute-bearing function type in the
+ * unique_ptr template argument.
+ */
+struct PcloseDeleter {
+    void operator()(FILE *pipe) const noexcept
+    {
+        if (pipe) {
+            ::pclose(pipe);
+        }
+    }
+};
+
+} // namespace
 
 using namespace beerocks;
 
@@ -78,7 +103,7 @@ std::string os_utils::system_call_with_output(const std::string &cmd, bool enabl
 
     // Maximum output string size.
     std::array<char, 10000> buffer;
-    std::unique_ptr<FILE, decltype(&pclose)> command_pipe(popen(command.c_str(), "r"), pclose);
+    std::unique_ptr<FILE, PcloseDeleter> command_pipe(::popen(command.c_str(), "r"));
 
     if (!command_pipe) {
         LOG(ERROR) << "Failed to create pipe for " << command;
