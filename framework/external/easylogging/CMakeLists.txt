@@ -4,6 +4,13 @@ set(ELPP_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_library(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/easylogging++.cc)
 
+# GCC 13 started diagnosing some patterns in easylogging++ with -Wstringop-overflow.
+# prplMesh builds with -Werror globally, so avoid turning this specific warning into an error
+# for the easylogging++ target only.
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 13)
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wno-error=stringop-overflow)
+endif()
+
 target_compile_definitions(${PROJECT_NAME}
     PUBLIC
         ELPP_THREAD_SAFE

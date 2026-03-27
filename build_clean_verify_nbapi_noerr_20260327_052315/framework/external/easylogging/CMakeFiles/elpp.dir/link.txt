@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -Wall -Wextra -Werror -pthread -Wno-comment -Wno-unused-parameter -Wno-missing-field-initializers -fno-exceptions -Wno-address-of-packed-member -Wno-error=stringop-overflow -O2 -g -DNDEBUG -shared -Wl,-soname,libelpp.so.5 -o ../../../out/lib/libelpp.so.5.2.0 CMakeFiles/elpp.dir/easylogging++.cc.o  -Wl,-rpath,:::::::::::::: 

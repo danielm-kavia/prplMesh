@@ -1,0 +1,273 @@
+#!/bin/sh
+###############################################################
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+# SPDX-FileCopyrightText: 2019-2026 the prplMesh contributors (see AUTHORS.md)
+# This code is subject to the terms of the BSD+Patent license.
+# See LICENSE file for more details.
+###############################################################
+
+SCRIPTDIR="$(dirname "$(readlink -f "${0}")")"
+PRPLMESH_DIR="$(cd "${SCRIPTDIR}/.." && pwd)"
+TARGET_PLATFORM=linux
+ODL_FILES="
+${PRPLMESH_DIR}/share/agent/odl/agent.odl
+${PRPLMESH_DIR}/config/agent/odl/defaults.d/00_slave_configuration.odl
+"
+
+# Explicitely ignore SIGPIPE to make sure the processes we start in
+# the background do not stop in case stdout/stderr gets closed early
+# (because the SSH connection calling the script is closed as soon as
+# the utils script exits for example). Similarly, ignore SIGHUP to
+# make sure the processes do not stop when the session leader
+# terminates:
+trap '' HUP PIPE
+
+send_signal_to_prplmesh_process() {
+    PROGRAM_NAME=$1
+    SIG=${2:-TERM}
+
+    echo "sending signal to ${PROGRAM_NAME} (${SIG})"
+    start-stop-daemon -K -s "${SIG}" -x "${PRPLMESH_DIR}/bin/${PROGRAM_NAME}" > /dev/null 2>&1
+}
+
+start_prplmesh_process() {
+    PROGRAM_NAME=$1
+
+    echo "starting ${PROGRAM_NAME}"
+    start-stop-daemon -S -b -x "${PRPLMESH_DIR}/bin/${PROGRAM_NAME}" > /dev/null 2>&1
+}
+
+stop_prplmesh_process() {
+    PROGRAM_NAME=$1
+    TIMEOUT=10
+
+    echo "stop ${PROGRAM_NAME} via signals"
+    send_signal_to_prplmesh_process "${PROGRAM_NAME}"
+
+    for _ in $(seq 1 "${TIMEOUT}"); do
+        if ! pgrep -f "${PROGRAM_NAME}" > /dev/null; then
+            return 0
+        fi
+        sleep 1
+    done
+
+    send_signal_to_prplmesh_process "${PROGRAM_NAME}" "KILL"
+}
+
+roll_logs_function() {
+    ROLL_PROGRESS_DIR="roll_in_progress.lock"
+
+    # Switch into the beerocks logs folder
+    cd /tmp/beerocks/logs || exit
+
+    # Check if log roll already in progress
+    if ! mkdir "$ROLL_PROGRESS_DIR"
+    then
+        echo "Roll already in progress... Exiting..."
+        exit 0
+    fi
+
+    # Symlinks point to all log files that can be rotated
+    links=$(for file in *; do readlink "$file" > /dev/null && echo "$file"; done)
+
+    for link in $links; do
+        # Keep the last 3 versions of the log file
+        echo "$link" | sed -e 's/log$/*/' | xargs find . -name | sort -r | awk 'NR>3' | xargs rm -f
+    done
+
+    # Send USR1 signals to the beerocks processes to trigger log rolling
+    send_signal_to_prplmesh_process beerocks_controller USR1
+    send_signal_to_prplmesh_process beerocks_agent USR1
+    send_signal_to_prplmesh_process beerocks_fronthaul USR1
+    send_signal_to_prplmesh_process beerocks_vendor_message USR1
+
+    # Cleanup
+    rm -r "$ROLL_PROGRESS_DIR"
+}
+
+usage() {
+    echo "usage: $(basename "$0") {start|stop|restart|status|roll_logs} [-h] [-m MODE] [-c CERT_MODE]"
+}
+
+odl_get_str_param() {
+    key=$1
+    default=$2
+    value=""
+
+    for file in $ODL_FILES; do
+        [ -e "${file}" ] || continue
+        value=$(sed -n -E "s/^[[:space:]]*parameter[[:space:]]*['\"]?${key}['\"]?[[:space:]]*=[[:space:]]*\"([^\"]*)\".*/\1/p" "${file}")
+        [ -n "${value}" ] && break
+    done
+
+    [ -z "${value}" ] && value=$default
+
+    echo "${value}"
+}
+
+odl_set_param() {
+    name=$1
+    value=$2
+    type=$3
+
+    for file in $ODL_FILES; do
+        [ -e "${file}" ] || continue
+
+        case "$type" in
+            string)
+                sed -i "s/\(parameter[[:space:]]\+${name}[[:space:]]*=[[:space:]]*\"\)[^\"]*\";/\1${value}\";/" "${file}"
+                sed -i "s/\(parameter[[:space:]]\+'${name}'[[:space:]]*=[[:space:]]*\"\)[^\"]*\";/\1${value}\";/" "${file}"
+                ;;
+            bool)
+                sed -i "s/\(parameter[[:space:]]\+${name}[[:space:]]*=[[:space:]]*\)[^;]*;/\1${value};/" "${file}"
+                sed -i "s/\(parameter[[:space:]]\+'${name}'[[:space:]]*=[[:space:]]*\)[^;]*;/\1${value};/" "${file}"
+                ;;
+            *)
+                echo "Unsupported param_type: ${type}" >&2
+                return 1
+                ;;
+        esac
+    done
+
+    return 0
+}
+
+ensure_platform_db() {
+    mkdir -p "/tmp/beerocks"
+    if [ ! -e "/tmp/beerocks/prplmesh_platform_db" ]; then
+        cp "${PRPLMESH_DIR}/share/prplmesh_platform_db" "/tmp/beerocks/prplmesh_platform_db"
+    fi
+}
+
+certification_mode_to_num() {
+    case "$1" in
+        1|true|TRUE|yes|on)  echo 1 ;;
+        0|false|FALSE|no|off) echo 0 ;;
+        *)
+            echo "Unsupported certification_mode: \"$1\" (use 0/1/true/false)" >&2
+            return 1
+            ;;
+    esac
+}
+
+set_management_and_certification_mode() {
+    management_mode=$1
+    certification_mode=$2
+
+    if [ -n "${management_mode}" ]; then
+        case "${management_mode}" in
+            Not-Multi-AP|Multi-AP-Agent|Multi-AP-Controller|Multi-AP-Controller-and-Agent|Non-Prpl-Controller-and-Agent)
+                ;;
+            *)
+                echo "unsupported mode: \"${management_mode}\""
+                exit 1
+                ;;
+        esac
+
+        echo "Set prplMesh management_mode to ${management_mode}"
+
+        sed -i "s/management_mode=.*/management_mode=${management_mode}/g" /tmp/beerocks/prplmesh_platform_db
+        odl_set_param "ManagementMode" "${management_mode}" "string" || return 1
+    fi
+
+    if [ -n "${certification_mode}" ]; then
+        certification_mode_num=$(certification_mode_to_num "${certification_mode}") || return 1
+        echo "Set prplMesh certification_mode to ${certification_mode_num}"
+
+        sed -i "s/certification_mode=.*/certification_mode=${certification_mode_num}/g" /tmp/beerocks/prplmesh_platform_db
+        odl_set_param "CertificationMode" "${certification_mode_num}" "bool" || return 1
+    fi
+
+    return 0
+}
+
+start_func() {
+    # This is required for solveing issue which causing meesges not geeting to their destination.
+    # For more information see: https://github.com/prplfoundation/prplMesh/pull/1029#issuecomment-608353274
+    ebtables -A FORWARD -d 01:80:c2:00:00:13 -j DROP
+
+    if [ "${TARGET_PLATFORM}" = "linux" ] || [ "${TARGET_PLATFORM}" = "rdkb" ]; then
+        mode=$(sed -n 's/^management_mode=\(.*\)$/\1/p' /tmp/beerocks/prplmesh_platform_db)
+        [ -z "$mode" ] && mode="Multi-AP-Controller-and-Agent"
+    else
+        mode=$(odl_get_str_param "ManagementMode" "Multi-AP-Controller-and-Agent")
+    fi
+    
+    echo "Starting prplMesh (mode=${mode})"
+
+    start_prplmesh_process ieee1905_transport
+    if [ "${mode}" != "Multi-AP-Agent" ] && [ "${mode}" != "Non-Prpl-Controller-and-Agent" ]; then
+        start_prplmesh_process beerocks_controller
+    fi
+    start_prplmesh_process beerocks_agent
+    start_prplmesh_process beerocks_vendor_message
+    return 0
+}
+
+stop_func() {
+    echo "Stopping prplMesh"
+    stop_prplmesh_process beerocks_vendor_message
+    stop_prplmesh_process beerocks_agent
+    stop_prplmesh_process beerocks_fronthaul
+    stop_prplmesh_process beerocks_controller
+    stop_prplmesh_process ieee1905_transport
+
+    ebtables -D FORWARD -d 01:80:c2:00:00:13 -j DROP
+    return 0
+}
+
+main() {
+    if ! OPTS=$(getopt -o 'hm:c:' -l 'help,mode:,cert:' -n 'parse-options' -- "$@"); then
+        echo "Failed parsing options." >&2
+        usage
+        exit 1
+    fi
+
+    eval set -- "$OPTS"
+    echo "OPTS=${OPTS}"
+
+    while true; do
+        case "${1}" in
+            -h | --help)          usage; exit 0 ;;
+            -m | --mode)          PRPLMESH_MODE="${2}"; shift; shift ;;
+            -c | --cert)          CERTIFICATION_MODE="${2}"; shift; shift ;;
+            -- ) shift; break ;;
+            * ) echo "unsupported argument ${1}"; usage; exit 1 ;;
+        esac
+    done
+
+    case "${1}" in
+        "start" | "restart")
+            ensure_platform_db
+            stop_func # Need to stop first for correctly apply modes
+            sleep 3 # Wait some time for completely stop
+            set_management_and_certification_mode "${PRPLMESH_MODE}" "${CERTIFICATION_MODE}" || echo "Warning: failed to set mode, starting with existing configuration"
+            start_func
+            ;;
+        "stop")
+            stop_func
+            ;;
+        "status")
+            "${PRPLMESH_DIR}/bin/prplmesh_cli" -c status -o pretty
+            ;;
+        "roll_logs")
+            roll_logs_function
+            return $?
+            ;;
+        *)
+            echo "unsupported argument \"${1}\""; usage; exit 1 ;;
+    esac
+
+    # Give write permissions (linux only)
+    # shellcheck disable=SC2050
+    if [ "${TARGET_PLATFORM}" = "linux" ]; then
+        chmod -R +o+w "/tmp/beerocks" || true
+    fi
+
+    return 0
+}
+
+PRPLMESH_MODE=""
+CERTIFICATION_MODE=""
+
+main "$@"
