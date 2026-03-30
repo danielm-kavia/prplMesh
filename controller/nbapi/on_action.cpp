@@ -1398,6 +1398,8 @@ std::vector<beerocks::nbapi::sFunctions> get_func_list(void)
     const std::vector<beerocks::nbapi::sFunctions> functions_list = {
         {"access_point_commit", DATAELEMENTS_ROOT_DM ".Network.AccessPointCommit",
          access_point_commit},
+        {"apply_zero_touch_config", DATAELEMENTS_ROOT_DM ".Network.ApplyZeroTouchConfig",
+         apply_zero_touch_config},
         {"client_steering", DATAELEMENTS_ROOT_DM ".Network.ClientSteering", client_steering},
         {"trigger_scan", DATAELEMENTS_ROOT_DM ".Network.Device.Radio.ScanTrigger", trigger_scan},
         {"BTMRequest", DATAELEMENTS_ROOT_DM ".Network.Device.Radio.BSS.STA.MultiAPSTA.BTMRequest",

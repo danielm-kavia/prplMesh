@@ -450,6 +450,30 @@
                     
                     void AccessPointCommit();
 
+                    /**
+                     * Zero-Touch Configuration (ZTC) scaffolding.
+                     *
+                     * This object stores the last apply result for observability and replay protection.
+                     * The entrypoint ApplyZeroTouchConfig accepts a JSON payload (as text), validates it,
+                     * and maps allow-listed fields onto existing NBAPI objects.
+                     *
+                     * NOTE: Secrets (passphrases) must not be logged. The implementation stores only
+                     * status/error summaries here.
+                     */
+                    %persistent object ZeroTouchConfiguration {
+                        %persistent uint64 LastAppliedRevision = 0;
+                        %persistent string LastAppliedSchemaVersion = "";
+                        %persistent datetime LastAppliedTime = "1970-01-01T00:00:00Z";
+                        %persistent string LastApplyStatus = "Never";
+                        %persistent string LastError = "";
+                    }
+
+                    void ApplyZeroTouchConfig(
+                        %in %mandatory string payload_json,
+                        %in bool dry_run,
+                        %in bool force
+                    );
+
                     // Global network wide enable
                     bool Enable = true; 
 

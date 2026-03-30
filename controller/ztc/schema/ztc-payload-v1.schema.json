@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prplmesh.org/schemas/ztc/ztc-payload-v1.schema.json",
+  "title": "prplMesh Zero-Touch Configuration (ZTC) Payload v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Payload schema version. Device-side validation will reject unknown versions.",
+      "const": "1.0"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Optional monotonic configuration revision for idempotency/replay protection. If present and > 0, the device will enforce monotonic increases unless 'force' is used."
+    },
+    "wifi": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Wi-Fi credentials/settings mapped onto existing NBAPI DataElements objects (Device.WiFi.DataElements.Network.AccessPoint.*).",
+      "properties": {
+        "replace_access_points": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, the device will delete all existing AccessPoint instances under Device.WiFi.DataElements.Network.AccessPoint before creating the new ones from this payload."
+        },
+        "access_points": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["ssid", "bands", "security"],
+            "properties": {
+              "ssid": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 32,
+                "description": "SSID to configure."
+              },
+              "enable": {
+                "type": "boolean",
+                "default": true,
+                "description": "Whether this AccessPoint instance should be enabled."
+              },
+              "vap_type": {
+                "type": "string",
+                "default": "other",
+                "description": "Mapped to X_PRPLWARE_VapType on the NBAPI AccessPoint object.",
+                "enum": ["home", "guest", "video", "backhaul", "hotspot", "staff", "isolated", "other"]
+              },
+              "multi_ap_mode": {
+                "type": "string",
+                "default": "Fronthaul",
+                "description": "Mapped to MultiApMode on the NBAPI AccessPoint object.",
+                "enum": ["Fronthaul", "Backhaul", "Fronthaul+Backhaul"]
+              },
+              "bands": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "description": "Mapped to Band2_4G/Band5GL/Band5GH/Band6G booleans on the NBAPI AccessPoint object.",
+                "items": {
+                  "type": "string",
+                  "enum": ["2.4G", "5GL", "5GH", "6G"]
+                }
+              },
+              "security": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["mode_enabled"],
+                "properties": {
+                  "mode_enabled": {
+                    "type": "string",
+                    "description": "Mapped to Security.ModeEnabled. If not 'None', a passphrase is required.",
+                    "enum": [
+                      "None",
+                      "WPA2-Personal",
+                      "WPA3-Personal",
+                      "WPA3-Personal-Transition",
+                      "WPA3-Personal-Compatibility"
+                    ]
+                  },
+                  "key_passphrase": {
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 63,
+                    "description": "Mapped to Security.KeyPassphrase. Secrets must not be logged."
+                  },
+                  "pre_shared_key": {
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 63,
+                    "description": "Optional: mapped to Security.PreSharedKey (WPA2-Personal). If omitted, key_passphrase is used where applicable."
+                  },
+                  "sae_passphrase": {
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 63,
+                    "description": "Optional: mapped to Security.SAEPassphrase (WPA3 modes). If omitted, key_passphrase is used where applicable."
+                  }
+                },
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": { "mode_enabled": { "const": "None" } }
+                    },
+                    "then": {
+                      "not": {
+                        "anyOf": [
+                          { "required": ["key_passphrase"] },
+                          { "required": ["pre_shared_key"] },
+                          { "required": ["sae_passphrase"] }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "if": {
+                      "properties": {
+                        "mode_enabled": {
+                          "enum": [
+                            "WPA2-Personal",
+                            "WPA3-Personal",
+                            "WPA3-Personal-Transition",
+                            "WPA3-Personal-Compatibility"
+                          ]
+                        }
+                      }
+                    },
+                    "then": {
+                      "anyOf": [
+                        { "required": ["key_passphrase"] },
+                        { "required": ["pre_shared_key"] },
+                        { "required": ["sae_passphrase"] }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "controller": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Controller behavior settings mapped onto existing NBAPI controller config surface (X_PRPLWARE-COM_Controller.Configuration.*).",
+      "properties": {
+        "configuration": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Allow-listed subset of controller Configuration parameters. Unknown keys must be rejected device-side.",
+          "properties": {
+            "DaisyChainingDisabled": { "type": "boolean" },
+            "ChannelSelectionTaskEnabled": { "type": "boolean" },
+            "DynamicChannelSelectionTaskEnabled": { "type": "boolean" },
+            "BackhaulOptimizationEnabled": { "type": "boolean" },
+            "LoadBalancingTaskEnabled": { "type": "boolean" },
+            "OptimalPathPreferSignalStrength": { "type": "boolean" },
+            "HealthCheckTaskEnabled": { "type": "boolean" },
+            "StatisticsPollingTaskEnabled": { "type": "boolean" },
+            "StatisticsPollingRateSec": { "type": "integer", "minimum": 1, "maximum": 10000 },
+            "LinkMetricsRequestIntervalSec": { "type": "integer", "minimum": 0, "maximum": 86400 }
+          }
+        }
+      }
+    }
+  }
+}

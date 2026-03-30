@@ -23,6 +23,18 @@ std::vector<beerocks::nbapi::sEvents> get_events_list(void);
 std::vector<beerocks::nbapi::sFunctions> get_func_list(void);
 beerocks::nbapi::ambiorix_func_ptr get_access_point_commit(void);
 
+/**
+ * @brief Apply Zero-Touch Configuration payload (JSON text) to NBAPI objects.
+ *
+ * This function is registered as:
+ *   Device.WiFi.DataElements.Network.ApplyZeroTouchConfig(...)
+ *
+ * The implementation is in controller/nbapi/ztc_ubus.cpp and delegates to the reusable
+ * flow in controller/src/beerocks/master/ztc/.
+ */
+amxd_status_t apply_zero_touch_config(amxd_object_t *object, amxd_function_t *func, amxc_var_t *args,
+                                     amxc_var_t *ret);
+
 extern son::db *g_database;
 
 /**
