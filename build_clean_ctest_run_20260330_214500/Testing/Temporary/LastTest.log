@@ -1,0 +1,1546 @@
+Start testing: Mar 30 21:46 UTC
+----------------------------------------------------------
+1/8 Testing: tlvf_test
+1/8 Test: tlvf_test
+Command: "/home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/out/bin/tlvf_test"
+Directory: /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/framework/tlvf/test
+"tlvf_test" start time: Mar 30 21:46 UTC
+Output:
+----------------------------------------------------------
+21:46:08 tlvf_test.cpp[2223]: main Starting tests
+21:46:08 tlvf_test.cpp[57]: test_int_len_list start
+21:46:08 tlvf_test.cpp[63]: TX: 
+02 00 06 aa bb cc dd ee ff 
+
+21:46:08 tlvf_test.cpp[75]: RX: 
+02 00 06 aa bb cc dd ee ff 
+
+21:46:08 tlvf_test.cpp[78]: test_int_len_list Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[88]: test_complex_list start
+21:46:08 tlvVarList.cpp[141]: TLVF: Can't allocate 10 elements (max length is 8 current length is 0)
+21:46:08 tlvVarList.cpp[123]: TLVF: set_test_string was already allocated!
+21:46:08 tlvVarList.cpp[218]: TLVF: No call to create_complex_list was called before add_complex_list
+21:46:08 tlvVarList.cpp[218]: TLVF: No call to create_complex_list was called before add_complex_list
+21:46:08 tlvVarList.cpp[218]: TLVF: No call to create_complex_list was called before add_complex_list
+21:46:08 tlvVarList.cpp[296]: TLVF: No call to create_var1 was called before add_var1
+21:46:08 tlvf_test.cpp[164]: TLV 4 length 82
+21:46:08 tlvf_test.cpp[166]: Finalize
+21:46:08 tlvf_test.cpp[173]: TX: 
+00 00 80 19 00 00 00 c0 ff 00 52 00 a0 02 0b b0 
+0b b1 07 31 32 33 34 35 36 37 03 00 01 00 08 03 
+c0 c1 c2 bb bb aa aa 00 01 00 08 03 c0 c1 c2 bb 
+bb aa aa 00 01 00 08 03 c0 c1 c2 bb bb aa aa 00 
+01 00 0d 00 00 00 b1 1b 70 72 70 6c 4d 65 73 68 
+00 01 00 05 00 00 00 b1 1b ab ab ab ab 00 00 00 
+
+21:46:08 CmduMessageRx.cpp[657]: Unknown TLV type: 255
+21:46:08 tlvf_test.cpp[219]: test_complex_list Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[396]: test_all start
+21:46:08 tlvf_test.cpp[409]: CLASS SIZE: 104
+21:46:08 tlvf_test.cpp[430]: WRITE 1 : 3
+21:46:08 tlvf_test.cpp[446]: WRITE 2 : 5
+21:46:08 tlvf_test.cpp[467]: TLV LENGTH START: 24
+21:46:08 tlvf_test.cpp[471]: Start WSC M2
+21:46:08 encryption.cpp[184]: Generating EVP keypair
+21:46:08 encryption.cpp[270]: EVP keypair generated
+21:46:08 encryption.cpp[184]: Generating EVP keypair
+21:46:08 encryption.cpp[270]: EVP keypair generated
+21:46:08 encryption.cpp[352]: Computing DH shared key
+21:46:08 encryption.cpp[352]: Computing DH shared key
+21:46:08 encryption.cpp[352]: Computing DH shared key
+21:46:08 tlvf_test.cpp[241]: WSC config_data:
+     ssid: test_ssid
+     authentication_type: 4096
+     network_key: test1234
+     encryption_type: 2048
+
+21:46:08 tlvf_test.cpp[273]: encrypted settings length: 80
+21:46:08 tlvf_test.cpp[275]: encrypted settings buffer: 
+ec a2 ba 7c 8e 93 1a 2a 1d b3 63 8a 59 58 4d 11 
+ce 71 6a e1 f9 f3 ae b0 55 63 b7 c7 72 c6 2e 7d 
+02 dc e7 82 67 05 fe 52 d0 8d 1e 77 b3 ed 92 40 
+20 8b 83 b4 68 38 a3 6c a0 4c f6 87 01 58 23 90 
+0f 87 14 b4 38 73 5e cb 98 4c 51 5b 91 96 9d 11 
+
+21:46:08 tlvf_test.cpp[279]: authenticator buffer: 
+bb bb bb bb bb bb bb bb 
+
+21:46:08 tlvf_test.cpp[510]: Done (WSC M2)
+21:46:08 tlvf_test.cpp[511]: TLV LENGTH WSC M2: 4047
+21:46:08 tlvf_test.cpp[517]: TLV LENGHT MAC: 6
+21:46:08 tlvVarList.cpp[61]: TLVF: Can't allocate 7 elements (max length is 8 current length is 2)
+21:46:08 tlvVarList.cpp[218]: TLVF: No call to create_complex_list was called before add_complex_list
+21:46:08 tlvVarList.cpp[296]: TLVF: No call to create_var1 was called before add_var1
+21:46:08 tlvVarList.cpp[356]: TLVF: No call to create_var3 was called before add_var3
+21:46:08 tlvf_test.cpp[583]: TLV 4 length 55
+21:46:08 tlvf_test.cpp[587]: Unknown list size: 9
+21:46:08 tlvf_test.cpp[588]: Total unknown Length: 9
+21:46:08 tlvf_test.cpp[589]: TLV 4 length 64
+21:46:08 tlvf_test.cpp[591]: Total Message length=655
+21:46:08 tlvf_test.cpp[593]: Finalize
+21:46:08 tlvf_test.cpp[600]: TX: 
+00 00 80 19 00 00 00 c0 06 00 18 00 00 00 00 00 
+00 00 01 02 03 04 05 05 05 05 05 05 05 ff ff ff 
+ff ff ff 08 00 08 00 00 00 00 00 00 00 01 11 02 
+12 10 4a 00 01 10 10 22 00 01 05 10 1a 00 10 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 
+39 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 10 48 00 10 ee ee ee ee ee ee ee ee ee 
+ee ee ee ee ee ee ee 10 32 00 c0 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 10 04 00 02 00 
+01 10 10 00 02 00 01 10 0d 00 01 01 10 08 00 02 
+06 80 10 21 00 08 70 72 70 6c 4d 65 73 68 10 23 
+00 06 55 62 75 6e 74 75 10 24 00 05 31 38 2e 30 
+34 10 42 00 09 70 72 70 6c 31 32 33 34 35 10 54 
+00 08 00 06 00 50 f2 04 00 04 10 11 00 13 70 72 
+70 6c 6d 65 73 68 2d 63 6f 6e 74 72 6f 6c 6c 65 
+72 10 3c 00 01 01 10 02 00 02 00 00 10 09 00 02 
+00 00 10 12 00 02 00 04 10 2d 00 04 80 00 00 01 
+10 49 00 06 00 37 2a 00 01 20 10 18 00 60 88 64 
+21 8a 8e 28 69 a9 32 c0 83 1b b2 5d 7d 07 ec a2 
+ba 7c 8e 93 1a 2a 1d b3 63 8a 59 58 4d 11 ce 71 
+6a e1 f9 f3 ae b0 55 63 b7 c7 72 c6 2e 7d 02 dc 
+e7 82 67 05 fe 52 d0 8d 1e 77 b3 ed 92 40 20 8b 
+83 b4 68 38 a3 6c a0 4c f6 87 01 58 23 90 0f 87 
+14 b4 38 73 5e cb 98 4c 51 5b 91 96 9d 11 10 49 
+00 05 88 41 fc 00 ff 10 05 00 08 bb bb bb bb bb 
+bb bb bb 02 00 06 01 02 03 04 05 06 ff 00 40 00 
+a0 02 0b b0 0b b1 00 02 00 01 00 0b 06 c0 c1 c2 
+c3 c4 c5 00 00 d0 0d 00 01 00 05 00 a1 1a d1 1d 
+00 01 00 05 00 00 00 ee ee 00 01 00 05 00 00 00 
+ee ee 00 00 00 00 00 01 00 05 00 bb bb aa aa 00 
+00 00 
+
+21:46:08 CmduMessageRx.cpp[657]: Unknown TLV type: 255
+21:46:08 tlvf_test.cpp[610]: LENGTH AFTER INIT: 24
+21:46:08 tlvf_test.cpp[627]: ADDRESS IS 255
+21:46:08 tlvf_test.cpp[639]: TLV2 LENGTH AFTER INIT: 8
+21:46:08 tlvf_test.cpp[647]: TLV3 LENGTH AFTER INIT: 530
+21:46:08 tlvf_test.cpp[298]: type: 4120
+21:46:08 tlvf_test.cpp[299]: encrypted settings length: 100
+21:46:08 tlvf_test.cpp[300]: encrypted settings buffer: 
+ec a2 ba 7c 8e 93 1a 2a 1d b3 63 8a 59 58 4d 11 
+ce 71 6a e1 f9 f3 ae b0 55 63 b7 c7 72 c6 2e 7d 
+02 dc e7 82 67 05 fe 52 d0 8d 1e 77 b3 ed 92 40 
+20 8b 83 b4 68 38 a3 6c a0 4c f6 87 01 58 23 90 
+0f 87 14 b4 38 73 5e cb 98 4c 51 5b 91 96 9d 11 
+
+21:46:08 tlvf_test.cpp[308]: EncryptedSettingsPayload buffer: 7ffe261f9d40
+10 45 00 09 74 65 73 74 5f 73 73 69 64 10 03 00 
+02 00 10 10 0f 00 02 00 08 10 27 00 08 74 65 73 
+74 31 32 33 34 10 20 00 06 00 00 00 00 00 00 10 
+49 00 09 00 37 2a 00 01 20 06 01 10 10 1e 00 08 
+00 00 00 00 00 00 00 00 
+
+21:46:08 WscAttrList.h[236]: Received Key Wrap Authentication attribute, assuming end of attribute list
+21:46:08 tlvf_test.cpp[316]: WSC config_data:
+     ssid: test_ssid
+     authentication_type: 10
+     encryption_type: 8
+     network_key: test1234
+
+21:46:08 tlvf_test.cpp[321]: authenticator buffer: 
+bb bb bb bb bb bb bb bb 
+
+21:46:08 tlvf_test.cpp[687]: Total unknown Length: 9
+21:46:08 tlvf_test.cpp[693]: TLV 4 length 40
+21:46:08 tlvNon1905neighborDeviceList.cpp[157]: buffPtrIncrementSafe(6138) Failed!
+21:46:08 tlvf_test.cpp[773]: Parse PROTECTION SUCCESS
+21:46:08 tlvf_test.cpp[776]: test_all Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[345]: Finalize
+21:46:08 tlvVarList.cpp[256]: TLVF: var3 is not initialized
+21:46:08 tlvVarList.cpp[494]: TLVF: post init check failed
+21:46:08 tlvf_test.cpp[353]: Finalize
+21:46:08 tlvf_test.cpp[359]: TX: 
+00 00 80 19 00 00 00 c0 06 00 06 00 00 00 00 00 
+00 08 00 08 00 00 00 00 00 00 00 00 11 00 00 ff 
+00 1b 00 00 00 00 00 00 01 00 05 00 00 00 00 00 
+00 01 00 05 00 00 00 00 00 00 00 00 00 00 00 00 
+
+21:46:08 CmduMessageRx.cpp[657]: Unknown TLV type: 255
+21:46:08 tlvf_test.cpp[387]: test_parser Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[782]: test_mac_from_string Starting
+21:46:08 tlvf_test.cpp[839]: test_mac_from_string Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1100]: test_conditional_parameters_rx_tx start with rx_buffer_1
+21:46:08 tlvf_test.cpp[859]: len: 2
+
+21:46:08 tlvf_test.cpp[868]: neighbor 0 bssid: 00:0c:43:48:a0:26
+
+21:46:08 tlvf_test.cpp[869]: neighbor 0 load presence flag: 0
+
+21:46:08 tlvProfile2ChannelScanResult.cpp[731]: TLVF: channel_utilization requested but condition not met: *m_bss_load_element_present == eBssLoadElementPresent::FIELD_PRESENT
+21:46:08 tlvProfile2ChannelScanResult.cpp[772]: TLVF: station_count requested but condition not met: *m_bss_load_element_present == eBssLoadElementPresent::FIELD_PRESENT
+21:46:08 tlvf_test.cpp[868]: neighbor 1 bssid: 00:50:43:24:18:b0
+
+21:46:08 tlvf_test.cpp[869]: neighbor 1 load presence flag: 0
+
+21:46:08 tlvProfile2ChannelScanResult.cpp[731]: TLVF: channel_utilization requested but condition not met: *m_bss_load_element_present == eBssLoadElementPresent::FIELD_PRESENT
+21:46:08 tlvProfile2ChannelScanResult.cpp[772]: TLVF: station_count requested but condition not met: *m_bss_load_element_present == eBssLoadElementPresent::FIELD_PRESENT
+21:46:08 tlvf_test.cpp[962]: _test_conditional_parameters_rx_tx Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1115]: test_conditional_parameters_rx_tx start with rx_buffer_2
+21:46:08 tlvf_test.cpp[859]: len: 2
+
+21:46:08 tlvf_test.cpp[868]: neighbor 0 bssid: 00:0c:43:48:a0:26
+
+21:46:08 tlvf_test.cpp[869]: neighbor 0 load presence flag: 0
+
+21:46:08 tlvProfile2ChannelScanResult.cpp[731]: TLVF: channel_utilization requested but condition not met: *m_bss_load_element_present == eBssLoadElementPresent::FIELD_PRESENT
+21:46:08 tlvProfile2ChannelScanResult.cpp[772]: TLVF: station_count requested but condition not met: *m_bss_load_element_present == eBssLoadElementPresent::FIELD_PRESENT
+21:46:08 tlvf_test.cpp[868]: neighbor 1 bssid: 00:50:43:24:18:b0
+
+21:46:08 tlvf_test.cpp[869]: neighbor 1 load presence flag: 128
+
+21:46:08 tlvf_test.cpp[873]: neighbor 1 channel utilization: 30
+
+21:46:08 tlvf_test.cpp[875]: neighbor 1 station count: 0
+
+21:46:08 tlvf_test.cpp[962]: _test_conditional_parameters_rx_tx Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1128]: test_conditional_parameters_rx_tx start with rx_buffer_3
+21:46:08 tlvf_test.cpp[859]: len: 2
+
+21:46:08 tlvf_test.cpp[868]: neighbor 0 bssid: 00:0c:43:48:a0:26
+
+21:46:08 tlvf_test.cpp[869]: neighbor 0 load presence flag: 128
+
+21:46:08 tlvf_test.cpp[873]: neighbor 0 channel utilization: 6
+
+21:46:08 tlvf_test.cpp[875]: neighbor 0 station count: 0
+
+21:46:08 tlvf_test.cpp[868]: neighbor 1 bssid: 00:50:43:24:18:b0
+
+21:46:08 tlvf_test.cpp[869]: neighbor 1 load presence flag: 0
+
+21:46:08 tlvProfile2ChannelScanResult.cpp[731]: TLVF: channel_utilization requested but condition not met: *m_bss_load_element_present == eBssLoadElementPresent::FIELD_PRESENT
+21:46:08 tlvProfile2ChannelScanResult.cpp[772]: TLVF: station_count requested but condition not met: *m_bss_load_element_present == eBssLoadElementPresent::FIELD_PRESENT
+21:46:08 tlvf_test.cpp[962]: _test_conditional_parameters_rx_tx Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1141]: test_conditional_parameters_rx_tx start with rx_buffer_4
+21:46:08 tlvf_test.cpp[859]: len: 2
+
+21:46:08 tlvf_test.cpp[868]: neighbor 0 bssid: 00:0c:43:48:a0:26
+
+21:46:08 tlvf_test.cpp[869]: neighbor 0 load presence flag: 128
+
+21:46:08 tlvf_test.cpp[873]: neighbor 0 channel utilization: 6
+
+21:46:08 tlvf_test.cpp[875]: neighbor 0 station count: 0
+
+21:46:08 tlvf_test.cpp[868]: neighbor 1 bssid: 00:50:43:24:18:b0
+
+21:46:08 tlvf_test.cpp[869]: neighbor 1 load presence flag: 128
+
+21:46:08 tlvf_test.cpp[873]: neighbor 1 channel utilization: 30
+
+21:46:08 tlvf_test.cpp[875]: neighbor 1 station count: 0
+
+21:46:08 tlvf_test.cpp[962]: _test_conditional_parameters_rx_tx Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[986]: test_channel_scan_results start
+21:46:08 tlvf_test.cpp[989]: test_channel_scan_results start with rx_buffer_3
+21:46:08 tlvf_test.cpp[1200]: test_parse_assoc_frame start
+21:46:08 AssocReqFrame.cpp[67]: 0 parsed successfully
+21:46:08 tlvf_test.cpp[1482]: test_parse_assoc_frame Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1583]: test_build_assoc_frame start
+21:46:08 tlvf_test.cpp[1816]: test_build_assoc_frame Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1489]: test_parse_reassoc_frame start
+21:46:08 AssocReqFrame.cpp[129]: TLVF: Forth mandatory field of Reassociation Request frame should be SSID
+21:46:08 AssocReqFrame.cpp[67]: 1 parsed successfully
+21:46:08 tlvf_test.cpp[1576]: test_parse_reassoc_frame Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1193]: test_create_error_response_message Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1823]: test_parse_ap_radio_vbss_capabilities start
+21:46:08 tlvf_test.cpp[1864]: test_parse_ap_radio_vbss_capabilities Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1897]: TX: 
+00 00 80 39 00 01 00 80 de 00 16 00 01 01 02 03 
+04 05 06 08 80 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 
+
+21:46:08 tlvf_test.cpp[1930]: test_create_ap_radio_vbss_response_cmdu Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[1937]: test_virtual_bss_creation start
+21:46:08 tlvVirtualBssCreation.cpp[252]: TLVF: dpp_connector length is smaller than requested length
+21:46:08 tlvf_test.cpp[2060]: test_virtual_bss_creation Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[2067]: test_topology_response_including_vbss_configuration_report start
+21:46:08 tlvf_test.cpp[2110]: TX: 
+00 00 00 03 00 01 00 80 de 00 19 00 07 01 01 02 
+03 04 05 06 01 07 08 09 0a 0b 0c 08 70 72 70 6c 
+4d 65 73 68 00 00 00 
+
+21:46:08 tlvf_test.cpp[2153]: test_topology_response_including_vbss_configuration_report Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[2161]: test_spatial_reuse_request_srg_bss_color_bitmap Start
+21:46:08 tlvf_test.cpp[2166]: test_spatial_reuse_request_srg_bss_color_bitmap Finished, errors = 0
+
+21:46:08 tlvf_test.cpp[2240]: main Finished, errors = 0
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"tlvf_test" end time: Mar 30 21:46 UTC
+"tlvf_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/8 Testing: mapf_common_encryption_tests
+2/8 Test: mapf_common_encryption_tests
+Command: "/home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/out/bin/mapf_common_encryption_tests"
+Directory: /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/framework/common/test
+"mapf_common_encryption_tests" start time: Mar 30 21:46 UTC
+Output:
+----------------------------------------------------------
+21:46:08 logger.cpp[144]: Configuration file does not exist
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"mapf_common_encryption_tests" end time: Mar 30 21:46 UTC
+"mapf_common_encryption_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/8 Testing: ieee1905_transport_broker_tests
+3/8 Test: ieee1905_transport_broker_tests
+Command: "/home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/out/bin/ieee1905_transport_broker_tests"
+Directory: /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/framework/transport/ieee1905_transport/test
+"ieee1905_transport_broker_tests" start time: Mar 30 21:46 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from broker_server
+[ RUN      ] broker_server.setup
+[       OK ] broker_server.setup (0 ms)
+[ RUN      ] broker_server.invalid_message_magic
+INFO 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:666 <140196177822528> ieee1905_transport_broker.cpp[274] --> Accepted new connection, sd=9
+INFO 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (9)
+DEBUG 21:46:08:666 <140196177822528> ieee1905_transport_broker_tests.cpp[117] --> Sending INVALID magic...
+ERROR 21:46:08:666 <140196177822528> ieee1905_transport_messages.cpp[90] --> Invalid message header: magic = 0x12345678, length = 0, fd = 9
+DEBUG 21:46:08:666 <140196177822528> ieee1905_transport_broker_tests.cpp[122] --> Sending VALID magic...
+WARNING 21:46:08:666 <140196177822528> ieee1905_transport_messages.cpp[51] --> Received unknown message type: 0
+DEBUG 21:46:08:666 <140196177822528> ieee1905_transport_broker.cpp[191] --> Processing internal message from FD: 9
+INFO 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:666 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=8
+DEBUG 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[48] --> Removing 1 FDs from the event loop
+INFO 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (9)
+DEBUG 21:46:08:666 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=9
+DEBUG 21:46:08:666 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=6
+[       OK ] broker_server.invalid_message_magic (0 ms)
+[ RUN      ] broker_server.subscribe_empty_message
+INFO 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:666 <140196177822528> ieee1905_transport_broker.cpp[274] --> Accepted new connection, sd=9
+INFO 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (9)
+ERROR 21:46:08:666 <140196177822528> ieee1905_transport_broker.cpp[213] --> Subscribe message does not contain any types!
+INFO 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:666 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=8
+DEBUG 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[48] --> Removing 1 FDs from the event loop
+INFO 21:46:08:666 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (9)
+DEBUG 21:46:08:666 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=9
+DEBUG 21:46:08:666 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=6
+[       OK ] broker_server.subscribe_empty_message (0 ms)
+[ RUN      ] broker_server.subscribe_single_type
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[274] --> Accepted new connection, sd=9
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (9)
+INFO 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[252] --> FD (9) subscribed to the following types: 0x5 
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[256] --> FD (9) subscriptions: [5]
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=8
+DEBUG 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[48] --> Removing 1 FDs from the event loop
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (9)
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=9
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=6
+[       OK ] broker_server.subscribe_single_type (1 ms)
+[ RUN      ] broker_server.subscribe_multiple_types
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[274] --> Accepted new connection, sd=9
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (9)
+INFO 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[252] --> FD (9) subscribed to the following types: 0x1 0x2 0x3 
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[256] --> FD (9) subscriptions: [3, 2, 1]
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=8
+DEBUG 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[48] --> Removing 1 FDs from the event loop
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (9)
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=9
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=6
+[       OK ] broker_server.subscribe_multiple_types (0 ms)
+[ RUN      ] broker_server.unsubscribe_empty_message
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[274] --> Accepted new connection, sd=9
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (9)
+ERROR 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[213] --> Subscribe message does not contain any types!
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=8
+DEBUG 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[48] --> Removing 1 FDs from the event loop
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (9)
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=9
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=6
+[       OK ] broker_server.unsubscribe_empty_message (0 ms)
+[ RUN      ] broker_server.unsubscribe_single_type
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[274] --> Accepted new connection, sd=9
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (9)
+INFO 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[252] --> FD (9) unsubscribed from the following types: 0x5 
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[256] --> FD (9) subscriptions: []
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=8
+DEBUG 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[48] --> Removing 1 FDs from the event loop
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (9)
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=9
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=6
+[       OK ] broker_server.unsubscribe_single_type (0 ms)
+[ RUN      ] broker_server.unsubscribe_multiple_types
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[274] --> Accepted new connection, sd=9
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (9)
+INFO 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[252] --> FD (9) unsubscribed from the following types: 0x1 0x2 0x3 
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[256] --> FD (9) subscriptions: []
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=8
+DEBUG 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[48] --> Removing 1 FDs from the event loop
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (9)
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=9
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=6
+[       OK ] broker_server.unsubscribe_multiple_types (0 ms)
+[ RUN      ] broker_server.subscribe_unsubscribe
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[274] --> Accepted new connection, sd=9
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (9)
+INFO 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[252] --> FD (9) subscribed to the following types: 0x1 0x2 0x3 
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[256] --> FD (9) subscriptions: [3, 2, 1]
+INFO 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[252] --> FD (9) unsubscribed from the following types: 0x1 0x2 0x3 
+DEBUG 21:46:08:667 <140196177822528> ieee1905_transport_broker.cpp[256] --> FD (9) subscriptions: []
+INFO 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (6) of 'BrokerServer Socket'
+DEBUG 21:46:08:667 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=8
+DEBUG 21:46:08:667 <140196177822528> beerocks_event_loop_impl.cpp[48] --> Removing 1 FDs from the event loop
+INFO 21:46:08:668 <140196177822528> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (9)
+DEBUG 21:46:08:668 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=9
+DEBUG 21:46:08:668 <140196177822528> socket.cpp[113] --> Socket DTOR closing socket fd=6
+[       OK ] broker_server.subscribe_unsubscribe (1 ms)
+[----------] 9 tests from broker_server (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 9 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ieee1905_transport_broker_tests" end time: Mar 30 21:46 UTC
+"ieee1905_transport_broker_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/8 Testing: bcl_unit_tests
+4/8 Test: bcl_unit_tests
+Command: "/home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/out/bin/bcl_unit_tests"
+Directory: /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/common/beerocks/bcl
+"bcl_unit_tests" start time: Mar 30 21:46 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/googletest-src/googletest/src/gtest_main.cc
+Result size: 194
+[==========] Running 289 tests from 25 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from BridgeStateManagerImpl
+[ RUN      ] BridgeStateManagerImpl.read_state_should_succeed_before_read
+[       OK ] BridgeStateManagerImpl.read_state_should_succeed_before_read (0 ms)
+[ RUN      ] BridgeStateManagerImpl.read_state_should_succeed_after_read
+[       OK ] BridgeStateManagerImpl.read_state_should_succeed_after_read (0 ms)
+[ RUN      ] BridgeStateManagerImpl.notify_state_changed_should_succeed
+[       OK ] BridgeStateManagerImpl.notify_state_changed_should_succeed (0 ms)
+[ RUN      ] BridgeStateManagerImpl.notify_state_changed_should_succeed_with_misplaced_add_event
+2026-03-30 21:46:08,674 DEBUG [default] [user@7f641f70ba29] [beerocks::net::BridgeStateManagerImpl::BridgeStateManagerImpl(std::unique_ptr<beerocks::net::BridgeStateMonitor>, std::unique_ptr<beerocks::net::BridgeStateReader>)::<lambda(const std::string&, const std::string&, bool)>] [..rkspace/code-generation/prplMesh/common/beerocks/bcl/source/network/bridge_state_manager_impl.cpp:71] Ignoring event (interface test_iface has not actually been added to bridge test_bridge)
+[       OK ] BridgeStateManagerImpl.notify_state_changed_should_succeed_with_misplaced_add_event (0 ms)
+[----------] 4 tests from BridgeStateManagerImpl (0 ms total)
+
+[----------] 5 tests from BufferImplTest
+[ RUN      ] BufferImplTest.clear_should_succeed
+[       OK ] BufferImplTest.clear_should_succeed (0 ms)
+[ RUN      ] BufferImplTest.append_should_fail_with_buffer_full
+[       OK ] BufferImplTest.append_should_fail_with_buffer_full (0 ms)
+[ RUN      ] BufferImplTest.append_should_succeed
+[       OK ] BufferImplTest.append_should_succeed (0 ms)
+[ RUN      ] BufferImplTest.shift_should_succeed
+[       OK ] BufferImplTest.shift_should_succeed (0 ms)
+[ RUN      ] BufferImplTest.shift_should_fail_if_count_greater_than_length
+[       OK ] BufferImplTest.shift_should_fail_if_count_greater_than_length (0 ms)
+[----------] 5 tests from BufferImplTest (0 ms total)
+
+[----------] 6 tests from CmduClientImplTest
+[ RUN      ] CmduClientImplTest.destructor_should_remove_connection_if_still_open
+[       OK ] CmduClientImplTest.destructor_should_remove_connection_if_still_open (0 ms)
+[ RUN      ] CmduClientImplTest.receive_cmdu_should_succeed
+2026-03-30 21:46:08,674 ERROR [default] Connection closed!
+[       OK ] CmduClientImplTest.receive_cmdu_should_succeed (0 ms)
+[ RUN      ] CmduClientImplTest.send_cmdu_should_succeed
+2026-03-30 21:46:08,675 ERROR [default] Connection closed!
+[       OK ] CmduClientImplTest.send_cmdu_should_succeed (1 ms)
+[ RUN      ] CmduClientImplTest.send_cmdu_should_fail_with_invalid_cmdu
+2026-03-30 21:46:08,675 ERROR [default] TLVF: Not enough available space on buffer. Class init failed
+2026-03-30 21:46:08,675 ERROR [default] Failed finalizing cmdu!
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [bool beerocks::CmduPeer::send_cmdu(beerocks::net::Socket::Connection&, ieee1905_1::CmduMessageTx&) const] [/home/kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_peer.cpp:36] hex_dump (0 bytes):
+
+2026-03-30 21:46:08,675 ERROR [default] Connection closed!
+[       OK ] CmduClientImplTest.send_cmdu_should_fail_with_invalid_cmdu (0 ms)
+[ RUN      ] CmduClientImplTest.send_cmdu_should_fail_if_serialize_cmdu_fails
+2026-03-30 21:46:08,675 ERROR [default] Failed to serialize CMDU! fd = 1
+2026-03-30 21:46:08,675 ERROR [default] Connection closed!
+[       OK ] CmduClientImplTest.send_cmdu_should_fail_if_serialize_cmdu_fails (0 ms)
+[ RUN      ] CmduClientImplTest.send_cmdu_should_fail_if_connection_is_closed
+2026-03-30 21:46:08,675 ERROR [default] Connection closed!
+2026-03-30 21:46:08,675 ERROR [default] Connection with server has been closed!
+[       OK ] CmduClientImplTest.send_cmdu_should_fail_if_connection_is_closed (0 ms)
+[----------] 6 tests from CmduClientImplTest (1 ms total)
+
+[----------] 4 tests from CmduParserStreamImplTest
+[ RUN      ] CmduParserStreamImplTest.parse_cmdu_should_fail_with_incomplete_header
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [virtual bool beerocks::net::CmduParserStreamImpl::parse_cmdu(beerocks::net::Buffer&, uint32_t&, sMacAddr&, sMacAddr&, ieee1905_1::CmduMessageRx&)] [..workspace/code-generation/prplMesh/common/beerocks/bcl/source/network/cmdu_parser_stream_impl.cpp:23] Buffer length (17) is less than UDS header length (18)
+[       OK ] CmduParserStreamImplTest.parse_cmdu_should_fail_with_incomplete_header (0 ms)
+[ RUN      ] CmduParserStreamImplTest.parse_cmdu_should_fail_with_incomplete_message
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [virtual bool beerocks::net::CmduParserStreamImpl::parse_cmdu(beerocks::net::Buffer&, uint32_t&, sMacAddr&, sMacAddr&, ieee1905_1::CmduMessageRx&)] [..workspace/code-generation/prplMesh/common/beerocks/bcl/source/network/cmdu_parser_stream_impl.cpp:39] Buffer length (18) is less than UDS header length (18) + CMDU length (1)
+[       OK ] CmduParserStreamImplTest.parse_cmdu_should_fail_with_incomplete_message (0 ms)
+[ RUN      ] CmduParserStreamImplTest.parse_cmdu_should_fail_with_invalid_message
+2026-03-30 21:46:08,675 ERROR [default] Invalid CMDU length: 1
+2026-03-30 21:46:08,675 ERROR [default] Failed verifying CMDU!
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [virtual bool beerocks::net::CmduParserStreamImpl::parse_cmdu(beerocks::net::Buffer&, uint32_t&, sMacAddr&, sMacAddr&, ieee1905_1::CmduMessageRx&)] [..workspace/code-generation/prplMesh/common/beerocks/bcl/source/network/cmdu_parser_stream_impl.cpp:48] hex_dump (1 bytes):
+00 
+
+[       OK ] CmduParserStreamImplTest.parse_cmdu_should_fail_with_invalid_message (0 ms)
+[ RUN      ] CmduParserStreamImplTest.parse_cmdu_should_succeed
+[       OK ] CmduParserStreamImplTest.parse_cmdu_should_succeed (0 ms)
+[----------] 4 tests from CmduParserStreamImplTest (0 ms total)
+
+[----------] 4 tests from CmduSerializerStreamImplTest
+[ RUN      ] CmduSerializerStreamImplTest.serialize_cmdu_should_fail_with_invalid_src_mac
+2026-03-30 21:46:08,675 ERROR [default] Source MAC address is empty!
+[       OK ] CmduSerializerStreamImplTest.serialize_cmdu_should_fail_with_invalid_src_mac (0 ms)
+[ RUN      ] CmduSerializerStreamImplTest.serialize_cmdu_should_fail_with_buffer_not_empty
+2026-03-30 21:46:08,675 ERROR [default] Buffer is not empty!
+[       OK ] CmduSerializerStreamImplTest.serialize_cmdu_should_fail_with_buffer_not_empty (0 ms)
+[ RUN      ] CmduSerializerStreamImplTest.serialize_cmdu_should_fail_with_buffer_too_small
+2026-03-30 21:46:08,675 ERROR [default] Buffer is too small! Required size: 26, actual size: 18
+[       OK ] CmduSerializerStreamImplTest.serialize_cmdu_should_fail_with_buffer_too_small (0 ms)
+[ RUN      ] CmduSerializerStreamImplTest.serialize_cmdu_should_succeed
+[       OK ] CmduSerializerStreamImplTest.serialize_cmdu_should_succeed (0 ms)
+[----------] 4 tests from CmduSerializerStreamImplTest (0 ms total)
+
+[----------] 7 tests from CmduServerImplTest
+[ RUN      ] CmduServerImplTest.destructor_should_remove_remaining_connections
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [virtual beerocks::CmduServerImpl::~CmduServerImpl()] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:63] CmduServerImpl CTOR
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [bool beerocks::CmduServerImpl::remove_connection(int, bool)] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:150] Removing connection, fd = 2
+[       OK ] CmduServerImplTest.destructor_should_remove_remaining_connections (0 ms)
+[ RUN      ] CmduServerImplTest.receive_cmdu_should_succeed
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [bool beerocks::CmduServerImpl::remove_connection(int, bool)] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:150] Removing connection, fd = 2
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [virtual beerocks::CmduServerImpl::~CmduServerImpl()] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:63] CmduServerImpl CTOR
+[       OK ] CmduServerImplTest.receive_cmdu_should_succeed (0 ms)
+[ RUN      ] CmduServerImplTest.send_cmdu_should_succeed
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [bool beerocks::CmduServerImpl::remove_connection(int, bool)] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:150] Removing connection, fd = 2
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [virtual beerocks::CmduServerImpl::~CmduServerImpl()] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:63] CmduServerImpl CTOR
+[       OK ] CmduServerImplTest.send_cmdu_should_succeed (0 ms)
+[ RUN      ] CmduServerImplTest.send_cmdu_should_fail_with_invalid_cmdu
+2026-03-30 21:46:08,675 ERROR [default] TLVF: Not enough available space on buffer. Class init failed
+2026-03-30 21:46:08,675 ERROR [default] Failed finalizing cmdu!
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [bool beerocks::CmduPeer::send_cmdu(beerocks::net::Socket::Connection&, ieee1905_1::CmduMessageTx&) const] [/home/kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_peer.cpp:36] hex_dump (0 bytes):
+
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [bool beerocks::CmduServerImpl::remove_connection(int, bool)] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:150] Removing connection, fd = 2
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [virtual beerocks::CmduServerImpl::~CmduServerImpl()] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:63] CmduServerImpl CTOR
+[       OK ] CmduServerImplTest.send_cmdu_should_fail_with_invalid_cmdu (0 ms)
+[ RUN      ] CmduServerImplTest.send_cmdu_should_fail_if_serialize_cmdu_fails
+2026-03-30 21:46:08,675 ERROR [default] Failed to serialize CMDU! fd = 2
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [bool beerocks::CmduServerImpl::remove_connection(int, bool)] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:150] Removing connection, fd = 2
+2026-03-30 21:46:08,675 DEBUG [default] [user@7f641f70ba29] [virtual beerocks::CmduServerImpl::~CmduServerImpl()] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:63] CmduServerImpl CTOR
+[       OK ] CmduServerImplTest.send_cmdu_should_fail_if_serialize_cmdu_fails (1 ms)
+[ RUN      ] CmduServerImplTest.send_cmdu_should_fail_with_disconnected_socket_fd
+2026-03-30 21:46:08,676 DEBUG [default] [user@7f641f70ba29] [bool beerocks::CmduServerImpl::remove_connection(int, bool)] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:150] Removing connection, fd = 2
+2026-03-30 21:46:08,676 ERROR [default] Failed to send CMDU through an unknown connection! fd = 2
+2026-03-30 21:46:08,676 DEBUG [default] [user@7f641f70ba29] [virtual beerocks::CmduServerImpl::~CmduServerImpl()] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:63] CmduServerImpl CTOR
+[       OK ] CmduServerImplTest.send_cmdu_should_fail_with_disconnected_socket_fd (0 ms)
+[ RUN      ] CmduServerImplTest.forward_cmdu_should_succeed
+2026-03-30 21:46:08,676 DEBUG [default] [user@7f641f70ba29] [bool beerocks::CmduServerImpl::remove_connection(int, bool)] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:150] Removing connection, fd = 2
+2026-03-30 21:46:08,676 DEBUG [default] [user@7f641f70ba29] [virtual beerocks::CmduServerImpl::~CmduServerImpl()] [..kavia/workspace/code-generation/prplMesh/common/beerocks/bcl/source/beerocks_cmdu_server_impl.cpp:63] CmduServerImpl CTOR
+[       OK ] CmduServerImplTest.forward_cmdu_should_succeed (0 ms)
+[----------] 7 tests from CmduServerImplTest (1 ms total)
+
+[----------] 10 tests from MacMapTest
+[ RUN      ] MacMapTest.get_non_existing_returns_null
+[       OK ] MacMapTest.get_non_existing_returns_null (0 ms)
+[ RUN      ] MacMapTest.get_returns_existing
+[       OK ] MacMapTest.get_returns_existing (0 ms)
+[ RUN      ] MacMapTest.add_keeps_old
+[       OK ] MacMapTest.add_keeps_old (0 ms)
+[ RUN      ] MacMapTest.add_keeps_old_sharedptr
+[       OK ] MacMapTest.add_keeps_old_sharedptr (0 ms)
+[ RUN      ] MacMapTest.keep_new_removes_old
+[       OK ] MacMapTest.keep_new_removes_old (0 ms)
+[ RUN      ] MacMapTest.keep_new_twice_has_no_effect
+[       OK ] MacMapTest.keep_new_twice_has_no_effect (0 ms)
+[ RUN      ] MacMapTest.keep_no_new_removes_all
+[       OK ] MacMapTest.keep_no_new_removes_all (0 ms)
+[ RUN      ] MacMapTest.keep_all_new_removes_none
+[       OK ] MacMapTest.keep_all_new_removes_none (0 ms)
+[ RUN      ] MacMapTest.keep_new_implied_by_add
+[       OK ] MacMapTest.keep_new_implied_by_add (0 ms)
+[ RUN      ] MacMapTest.keep_new_implied_by_add_sharedptr
+[       OK ] MacMapTest.keep_new_implied_by_add_sharedptr (0 ms)
+[----------] 10 tests from MacMapTest (0 ms total)
+
+[----------] 7 tests from NetworkUtilsTest
+[ RUN      ] NetworkUtilsTest.get_iface_stats_should_succeed
+eth0:
+	tx_bytes: 225898177
+	tx_packets: 121549
+	tx_errors: 0
+	rx_bytes: 209031997
+	rx_packets: 147894
+	rx_errors: 0
+lo:
+	tx_bytes: 0
+	tx_packets: 0
+	tx_errors: 0
+	rx_bytes: 0
+	rx_packets: 0
+	rx_errors: 0
+[       OK ] NetworkUtilsTest.get_iface_stats_should_succeed (0 ms)
+[ RUN      ] NetworkUtilsTest.build_vlan_interface_name_should_shorten_wlan_and_sta_tokens
+[       OK ] NetworkUtilsTest.build_vlan_interface_name_should_shorten_wlan_and_sta_tokens (0 ms)
+[ RUN      ] NetworkUtilsTest.build_vlan_interface_name_should_use_explicit_suffix
+[       OK ] NetworkUtilsTest.build_vlan_interface_name_should_use_explicit_suffix (0 ms)
+[ RUN      ] NetworkUtilsTest.build_vlan_interface_name_should_keep_eth_iface_name
+[       OK ] NetworkUtilsTest.build_vlan_interface_name_should_keep_eth_iface_name (0 ms)
+[ RUN      ] NetworkUtilsTest.build_vlan_interface_name_should_keep_lan_iface_name
+[       OK ] NetworkUtilsTest.build_vlan_interface_name_should_keep_lan_iface_name (0 ms)
+[ RUN      ] NetworkUtilsTest.build_vlan_interface_name_should_fail_on_invalid_vid
+2026-03-30 21:46:08,676 ERROR [default] Given VID is invalid: 0
+[       OK ] NetworkUtilsTest.build_vlan_interface_name_should_fail_on_invalid_vid (0 ms)
+[ RUN      ] NetworkUtilsTest.build_vlan_interface_name_should_fail_when_exceeding_ifnam_limit
+2026-03-30 21:46:08,676 ERROR [default] Generated VLAN interface name 'aaaaaaaaaaaaaaaa.200' exceeds maximum visible length 15
+[       OK ] NetworkUtilsTest.build_vlan_interface_name_should_fail_when_exceeding_ifnam_limit (0 ms)
+[----------] 7 tests from NetworkUtilsTest (0 ms total)
+
+[----------] 2 tests from beerocks_event_loop_impl
+[ RUN      ] beerocks_event_loop_impl.setup
+[       OK ] beerocks_event_loop_impl.setup (0 ms)
+[ RUN      ] beerocks_event_loop_impl.simple_read_write
+INFO 21:46:08:676 <140471193159488> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (7)
+INFO 21:46:08:676 <140471193159488> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (8)
+INFO 21:46:08:676 <140471193159488> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (7)
+INFO 21:46:08:676 <140471193159488> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (8)
+DEBUG 21:46:08:676 <140471193159488> beerocks_event_loop_impl.cpp[48] --> Removing 0 FDs from the event loop
+[       OK ] beerocks_event_loop_impl.simple_read_write (0 ms)
+[----------] 2 tests from beerocks_event_loop_impl (0 ms total)
+
+[----------] 4 tests from InterfaceStateManagerImpl
+[ RUN      ] InterfaceStateManagerImpl.read_state_should_succeed_before_event
+[       OK ] InterfaceStateManagerImpl.read_state_should_succeed_before_event (0 ms)
+[ RUN      ] InterfaceStateManagerImpl.read_state_should_succeed_after_read
+[       OK ] InterfaceStateManagerImpl.read_state_should_succeed_after_read (0 ms)
+[ RUN      ] InterfaceStateManagerImpl.read_state_should_succeed_after_event
+[       OK ] InterfaceStateManagerImpl.read_state_should_succeed_after_event (0 ms)
+[ RUN      ] InterfaceStateManagerImpl.notify_state_changed_should_succeed
+[       OK ] InterfaceStateManagerImpl.notify_state_changed_should_succeed (0 ms)
+[----------] 4 tests from InterfaceStateManagerImpl (0 ms total)
+
+[----------] 2 tests from TimerImplTest
+[ RUN      ] TimerImplTest.timer_should_succeed
+INFO 21:46:08:676 <140471193159488> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (7)
+ERROR 21:46:09:676 <140471193159488> beerocks_event_loop_impl.cpp[233] --> Read handler on FD (7) failed
+INFO 21:46:09:676 <140471193159488> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (7)
+DEBUG 21:46:09:676 <140471193159488> beerocks_event_loop_impl.cpp[48] --> Removing 0 FDs from the event loop
+[       OK ] TimerImplTest.timer_should_succeed (1000 ms)
+[ RUN      ] TimerImplTest.timer_should_succeed_with_microseconds
+INFO 21:46:09:676 <140471193159488> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (7)
+ERROR 21:46:10:677 <140471193159488> beerocks_event_loop_impl.cpp[233] --> Read handler on FD (7) failed
+INFO 21:46:10:677 <140471193159488> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (7)
+DEBUG 21:46:10:677 <140471193159488> beerocks_event_loop_impl.cpp[48] --> Removing 0 FDs from the event loop
+[       OK ] TimerImplTest.timer_should_succeed_with_microseconds (1001 ms)
+[----------] 2 tests from TimerImplTest (2001 ms total)
+
+[----------] 4 tests from TimerManagerImplTest
+[ RUN      ] TimerManagerImplTest.add_timer_should_succeed
+DEBUG 21:46:10:677 <140471193159488> beerocks_timer_manager_impl.cpp[83] --> Timer added, fd = 1
+DEBUG 21:46:10:677 <140471193159488> beerocks_timer_manager_impl.cpp[110] --> Timer removed, fd = 1
+[       OK ] TimerManagerImplTest.add_timer_should_succeed (0 ms)
+[ RUN      ] TimerManagerImplTest.remove_timer_should_fail_with_unknown_timer_fd
+ERROR 21:46:10:677 <140471193159488> beerocks_timer_manager_impl.cpp[92] --> Timer not found!, fd = 2
+[       OK ] TimerManagerImplTest.remove_timer_should_fail_with_unknown_timer_fd (0 ms)
+[ RUN      ] TimerManagerImplTest.destructor_should_remove_remaining_timers
+DEBUG 21:46:10:677 <140471193159488> beerocks_timer_manager_impl.cpp[83] --> Timer added, fd = 1
+DEBUG 21:46:10:677 <140471193159488> beerocks_timer_manager_impl.cpp[110] --> Timer removed, fd = 1
+[       OK ] TimerManagerImplTest.destructor_should_remove_remaining_timers (0 ms)
+[ RUN      ] TimerManagerImplTest.example_of_use
+INFO 21:46:10:677 <140471193159488> beerocks_event_loop_impl.cpp[73] --> Register handlers for FD (7) of 'test timer period_ms: 1'
+DEBUG 21:46:10:677 <140471193159488> beerocks_timer_manager_impl.cpp[83] --> Timer added, fd = 7
+INFO 21:46:10:687 <140471193159488> beerocks_event_loop_impl.cpp[141] --> Removed handlers for FD (7) of 'test timer period_ms: 1'
+DEBUG 21:46:10:687 <140471193159488> beerocks_timer_manager_impl.cpp[110] --> Timer removed, fd = 7
+DEBUG 21:46:10:687 <140471193159488> beerocks_event_loop_impl.cpp[48] --> Removing 0 FDs from the event loop
+[       OK ] TimerManagerImplTest.example_of_use (10 ms)
+[----------] 4 tests from TimerManagerImplTest (10 ms total)
+
+[----------] 3 tests from TransactionTest
+[ RUN      ] TransactionTest.commit_should_succeed
+[       OK ] TransactionTest.commit_should_succeed (0 ms)
+[ RUN      ] TransactionTest.rollback_should_succeed
+[       OK ] TransactionTest.rollback_should_succeed (0 ms)
+[ RUN      ] TransactionTest.destructor_should_call_rollback_if_transaction_was_not_committed
+[       OK ] TransactionTest.destructor_should_call_rollback_if_transaction_was_not_committed (0 ms)
+[----------] 3 tests from TransactionTest (0 ms total)
+
+[----------] 3 tests from UccParserStreamImplTest
+[ RUN      ] UccParserStreamImplTest.parse_command_should_fail_without_trailer
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_parser_stream_impl.cpp[26] --> Trailer not found, buffer length = 5
+[       OK ] UccParserStreamImplTest.parse_command_should_fail_without_trailer (0 ms)
+[ RUN      ] UccParserStreamImplTest.parse_command_should_fail_without_trailer_and_buffer_full
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_parser_stream_impl.cpp[26] --> Trailer not found, buffer length = 5
+[       OK ] UccParserStreamImplTest.parse_command_should_fail_without_trailer_and_buffer_full (0 ms)
+[ RUN      ] UccParserStreamImplTest.parse_command_should_succeed
+[       OK ] UccParserStreamImplTest.parse_command_should_succeed (0 ms)
+[----------] 3 tests from UccParserStreamImplTest (0 ms total)
+
+[----------] 3 tests from UccSerializerStreamImplTest
+[ RUN      ] UccSerializerStreamImplTest.serialize_reply_should_fail_with_buffer_not_empty
+ERROR 21:46:10:687 <140471193159488> beerocks_ucc_serializer_stream_impl.cpp[20] --> Buffer is not empty!
+[       OK ] UccSerializerStreamImplTest.serialize_reply_should_fail_with_buffer_not_empty (0 ms)
+[ RUN      ] UccSerializerStreamImplTest.serialize_reply_should_fail_with_buffer_too_small
+ERROR 21:46:10:687 <140471193159488> beerocks_ucc_serializer_stream_impl.cpp[32] --> Buffer is too small! Required size: 6, actual size: 5
+[       OK ] UccSerializerStreamImplTest.serialize_reply_should_fail_with_buffer_too_small (0 ms)
+[ RUN      ] UccSerializerStreamImplTest.serialize_reply_should_succeed
+[       OK ] UccSerializerStreamImplTest.serialize_reply_should_succeed (0 ms)
+[----------] 3 tests from UccSerializerStreamImplTest (0 ms total)
+
+[----------] 7 tests from UccServerImplTest
+[ RUN      ] UccServerImplTest.destructor_should_remove_existing_connection
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[143] --> Accepting connection, fd = 2
+INFO 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[154] --> Client connected from 0.0.0.0:0, fd = 2
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[98] --> Adding new connection, fd = 2
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[119] --> Removing connection, fd = 2
+[       OK ] UccServerImplTest.destructor_should_remove_existing_connection (0 ms)
+[ RUN      ] UccServerImplTest.new_connection_overwrites_existing_connection
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[143] --> Accepting connection, fd = 2
+INFO 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[154] --> Client connected from 0.0.0.0:0, fd = 2
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[98] --> Adding new connection, fd = 2
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[143] --> Accepting connection, fd = 3
+INFO 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[154] --> Client connected from 0.0.0.0:0, fd = 3
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[98] --> Adding new connection, fd = 3
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[119] --> Removing connection, fd = 2
+DEBUG 21:46:10:687 <140471193159488> beerocks_ucc_server_impl.cpp[119] --> Removing connection, fd = 3
+[       OK ] UccServerImplTest.new_connection_overwrites_existing_connection (1 ms)
+[ RUN      ] UccServerImplTest.receive_command_should_succeed
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[143] --> Accepting connection, fd = 2
+INFO 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[154] --> Client connected from 0.0.0.0:0, fd = 2
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[98] --> Adding new connection, fd = 2
+INFO 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[203] --> Bytes received (16): [00][00][00][00][00][00][00][00][00][00][00][00][00][00][00][00]
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[119] --> Removing connection, fd = 2
+[       OK ] UccServerImplTest.receive_command_should_succeed (0 ms)
+[ RUN      ] UccServerImplTest.receive_command_should_fail_if_parse_command_fails
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[143] --> Accepting connection, fd = 2
+INFO 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[154] --> Client connected from 0.0.0.0:0, fd = 2
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[98] --> Adding new connection, fd = 2
+INFO 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[203] --> Bytes received (16): [00][00][00][00][00][00][00][00][00][00][00][00][00][00][00][00]
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[119] --> Removing connection, fd = 2
+[       OK ] UccServerImplTest.receive_command_should_fail_if_parse_command_fails (0 ms)
+[ RUN      ] UccServerImplTest.send_reply_should_succeed
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[143] --> Accepting connection, fd = 2
+INFO 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[154] --> Client connected from 0.0.0.0:0, fd = 2
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[98] --> Adding new connection, fd = 2
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[119] --> Removing connection, fd = 2
+[       OK ] UccServerImplTest.send_reply_should_succeed (0 ms)
+[ RUN      ] UccServerImplTest.send_reply_should_fail_if_serialize_reply_fails
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[143] --> Accepting connection, fd = 2
+INFO 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[154] --> Client connected from 0.0.0.0:0, fd = 2
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[98] --> Adding new connection, fd = 2
+ERROR 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[86] --> Failed serializing reply string, fd = 2
+DEBUG 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[119] --> Removing connection, fd = 2
+[       OK ] UccServerImplTest.send_reply_should_fail_if_serialize_reply_fails (0 ms)
+[ RUN      ] UccServerImplTest.send_reply_should_fail_with_unknown_socket_fd
+ERROR 21:46:10:688 <140471193159488> beerocks_ucc_server_impl.cpp[79] --> Unable to send reply through an unknown connection, fd = 2
+[       OK ] UccServerImplTest.send_reply_should_fail_with_unknown_socket_fd (0 ms)
+[----------] 7 tests from UccServerImplTest (1 ms total)
+
+[----------] 1 test from overlapping_channels
+[ RUN      ] overlapping_channels.channel_112
+[       OK ] overlapping_channels.channel_112 (0 ms)
+[----------] 1 test from overlapping_channels (0 ms total)
+
+[----------] 2 tests from estimate_ul_params
+[ RUN      ] estimate_ul_params.too_low_phy_rate
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[606] --> UL RSSI:-60 | sta_phy_tx_rate:6 Mbps | AP BW:40MHz | is_5ghz:0 | ant_num:1 | max_ant_mode:0 | max MCS:7 | max BW:40MHz
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[619] --> Can not estimate UL parameters (STA phyrate is too low)
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[606] --> UL RSSI:-60 | sta_phy_tx_rate:6 Mbps | AP BW:20MHz | is_5ghz:0 | ant_num:1 | max_ant_mode:0 | max MCS:7 | max BW:20MHz
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[718] --> Successful estimation | tx_power:18 | RSSI:-89
+[       OK ] estimate_ul_params.too_low_phy_rate (0 ms)
+[ RUN      ] estimate_ul_params.too_high_phy_rate
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[606] --> UL RSSI:-30 | sta_phy_tx_rate:1800 Mbps | AP BW:160MHz | is_5ghz:1 | ant_num:2 | max_ant_mode:2 | max MCS:9 | max BW:160MHz
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[636] --> STA phy rate (1800 Mbps) is above maximum possible in current MCS/NSS/BW mode (1733 Mbps)
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[647] --> Return maximal estimation values | tx_power:8 | RSSI:-46
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[606] --> UL RSSI:-30 | sta_phy_tx_rate:1733 Mbps | AP BW:160MHz | is_5ghz:1 | ant_num:2 | max_ant_mode:2 | max MCS:9 | max BW:160MHz
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[718] --> Successful estimation | tx_power:8 | RSSI:-46
+[       OK ] estimate_ul_params.too_high_phy_rate (0 ms)
+[----------] 2 tests from estimate_ul_params (0 ms total)
+
+[----------] 2 tests from estimate_ap_tx_phy_rate
+[ RUN      ] estimate_ap_tx_phy_rate.match_rssi_to_rate
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[810] --> estimated DL RSSI:-81 | AP BW:160MHz | Return estimated PHY RATE:65 Mbps
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[810] --> estimated DL RSSI:-81 | AP BW:80MHz | Return estimated PHY RATE:65 Mbps
+[       OK ] estimate_ap_tx_phy_rate.match_rssi_to_rate (0 ms)
+[ RUN      ] estimate_ap_tx_phy_rate.no_match_rssi_to_rate
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[810] --> estimated DL RSSI:-100 | AP BW:40MHz | Return estimated PHY RATE:7 Mbps
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[810] --> estimated DL RSSI:-89 | AP BW:20MHz | Return estimated PHY RATE:7 Mbps
+[       OK ] estimate_ap_tx_phy_rate.no_match_rssi_to_rate (0 ms)
+[----------] 2 tests from estimate_ap_tx_phy_rate (0 ms total)
+
+[----------] 2 tests from mcs_from_rate
+[ RUN      ] mcs_from_rate.matched_mcs_from_rate
+[       OK ] mcs_from_rate.matched_mcs_from_rate (0 ms)
+[ RUN      ] mcs_from_rate.neerest_mcs_from_rate
+DEBUG 21:46:10:688 <140471193159488> son_wireless_utils.cpp[882] --> rate:7030 | BW:160MHz | ant_mode:2 | Return MCS:4 and GI:0
+[       OK ] mcs_from_rate.neerest_mcs_from_rate (0 ms)
+[----------] 2 tests from mcs_from_rate (0 ms total)
+
+[----------] 4 tests from BeerocksUtilsTest
+[ RUN      ] BeerocksUtilsTest.extract_prefix_from_iface_name
+[       OK ] BeerocksUtilsTest.extract_prefix_from_iface_name (0 ms)
+[ RUN      ] BeerocksUtilsTest.check_allowed_iface_prefix_regardless_name_format
+[       OK ] BeerocksUtilsTest.check_allowed_iface_prefix_regardless_name_format (0 ms)
+[ RUN      ] BeerocksUtilsTest.extract_ids_from_iface_name
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[119] --> iface does not contain any allowed prefix, function input string: wlan1-2.sta1
+DEBUG 21:46:10:688 <140471193159488> beerocks_utils.cpp[142] --> Invalid VAP id 100 for interface wlan2-100
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[131] --> Invalid interface name wl
+DEBUG 21:46:10:688 <140471193159488> beerocks_utils.cpp[142] --> Invalid VAP id 100 for interface wl1.100
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[119] --> iface does not contain any allowed prefix, function input string: eth1
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[119] --> iface does not contain any allowed prefix, function input string: wlan1-2.1
+[       OK ] BeerocksUtilsTest.extract_ids_from_iface_name (0 ms)
+[ RUN      ] BeerocksUtilsTest.format_iface_name_from_ids
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[119] --> iface does not contain any allowed prefix, function input string: eth0
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[176] --> function input is not valid! iface=eth0, vap_id=0
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[131] --> Invalid interface name wl
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[176] --> function input is not valid! iface=wl, vap_id=0
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[176] --> function input is not valid! iface=wlan1-2, vap_id=16
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[119] --> iface does not contain any allowed prefix, function input string: wlx0
+ERROR 21:46:10:688 <140471193159488> beerocks_utils.cpp[176] --> function input is not valid! iface=wlx0, vap_id=-1
+ERROR 21:46:10:689 <140471193159488> beerocks_utils.cpp[119] --> iface does not contain any allowed prefix, function input string: wlx0
+ERROR 21:46:10:689 <140471193159488> beerocks_utils.cpp[176] --> function input is not valid! iface=wlx0, vap_id=0
+[       OK ] BeerocksUtilsTest.format_iface_name_from_ids (1 ms)
+[----------] 4 tests from BeerocksUtilsTest (1 ms total)
+
+[----------] 2 tests from parse_station_capabilities
+[ RUN      ] parse_station_capabilities.sta_caps_from_rcvd_raw_data
+DEBUG 21:46:10:689 <140471193159488> AssocReqFrame.cpp[67] --> 0 parsed successfully
+ERROR 21:46:10:689 <140471193159488> cSupportedChannels.cpp[40] --> TLVF: Requested index is greater than the number of available entries
+DEBUG 21:46:10:689 <140471193159488> son_wireless_utils.cpp[882] --> rate:540 | BW:20MHz | ant_mode:0 | Return MCS:5 and GI:0
+[       OK ] parse_station_capabilities.sta_caps_from_rcvd_raw_data (0 ms)
+[ RUN      ] parse_station_capabilities.sta_caps_from_formatted_assoc_frame
+DEBUG 21:46:10:689 <140471193159488> son_wireless_utils.cpp[882] --> rate:0 | BW:20MHz | ant_mode:0 | Return MCS:0 and GI:0
+[       OK ] parse_station_capabilities.sta_caps_from_formatted_assoc_frame (0 ms)
+[----------] 2 tests from parse_station_capabilities (0 ms total)
+
+[----------] 3 tests from BeerocksWifiChannel
+[ RUN      ] BeerocksWifiChannel.check_24ghz_getters_and_setters_are_valid
+[       OK ] BeerocksWifiChannel.check_24ghz_getters_and_setters_are_valid (0 ms)
+[ RUN      ] BeerocksWifiChannel.check_5ghz_getters_and_setters_are_valid
+[       OK ] BeerocksWifiChannel.check_5ghz_getters_and_setters_are_valid (0 ms)
+[ RUN      ] BeerocksWifiChannel.check_6ghz_getters_and_setters_are_valid
+[       OK ] BeerocksWifiChannel.check_6ghz_getters_and_setters_are_valid (0 ms)
+[----------] 3 tests from BeerocksWifiChannel (0 ms total)
+
+[----------] 4 tests from HelloParamsInstance/UccParserStreamImpl_ParseCommandTest
+[ RUN      ] HelloParamsInstance/UccParserStreamImpl_ParseCommandTest.parse_command_should_succeed/hello0a
+[       OK ] HelloParamsInstance/UccParserStreamImpl_ParseCommandTest.parse_command_should_succeed/hello0a (0 ms)
+[ RUN      ] HelloParamsInstance/UccParserStreamImpl_ParseCommandTest.parse_command_should_succeed/hello0d0a
+[       OK ] HelloParamsInstance/UccParserStreamImpl_ParseCommandTest.parse_command_should_succeed/hello0d0a (0 ms)
+[ RUN      ] HelloParamsInstance/UccParserStreamImpl_ParseCommandTest.parse_command_should_succeed/hello200d0a
+[       OK ] HelloParamsInstance/UccParserStreamImpl_ParseCommandTest.parse_command_should_succeed/hello200d0a (0 ms)
+[ RUN      ] HelloParamsInstance/UccParserStreamImpl_ParseCommandTest.parse_command_should_succeed/hello0d0ahello20d0a20hello0a
+[       OK ] HelloParamsInstance/UccParserStreamImpl_ParseCommandTest.parse_command_should_succeed/hello0d0ahello20d0a20hello0a (0 ms)
+[----------] 4 tests from HelloParamsInstance/UccParserStreamImpl_ParseCommandTest (0 ms total)
+
+[----------] 194 tests from ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_2_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_2_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_3_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_3_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_4_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_4_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_5_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_5_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_6_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_6_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_7_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_7_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_8_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_8_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_9_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_9_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_10_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_10_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_11_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_11_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_12_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_12_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_13_bandwidth_20_operating_class_81
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_13_bandwidth_20_operating_class_81 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_14_bandwidth_20_operating_class_82
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_14_bandwidth_20_operating_class_82 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_40_operating_class_83
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_40_operating_class_83 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_2_bandwidth_40_operating_class_83
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_2_bandwidth_40_operating_class_83 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_3_bandwidth_40_operating_class_83
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_3_bandwidth_40_operating_class_83 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_4_bandwidth_40_operating_class_83
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_4_bandwidth_40_operating_class_83 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_5_bandwidth_40_operating_class_83
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_5_bandwidth_40_operating_class_83 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_6_bandwidth_40_operating_class_83
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_6_bandwidth_40_operating_class_83 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_7_bandwidth_40_operating_class_83
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_7_bandwidth_40_operating_class_83 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_8_bandwidth_40_operating_class_83
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_8_bandwidth_40_operating_class_83 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_9_bandwidth_40_operating_class_83
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_9_bandwidth_40_operating_class_83 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_10_bandwidth_40_operating_class_84
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_10_bandwidth_40_operating_class_84 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_11_bandwidth_40_operating_class_84
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_11_bandwidth_40_operating_class_84 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_12_bandwidth_40_operating_class_84
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_12_bandwidth_40_operating_class_84 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_13_bandwidth_40_operating_class_84
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_13_bandwidth_40_operating_class_84 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_36_bandwidth_20_operating_class_115
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_36_bandwidth_20_operating_class_115 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_40_bandwidth_20_operating_class_115
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_40_bandwidth_20_operating_class_115 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_44_bandwidth_20_operating_class_115
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_44_bandwidth_20_operating_class_115 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_48_bandwidth_20_operating_class_115
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_48_bandwidth_20_operating_class_115 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_36_bandwidth_40_operating_class_116
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_36_bandwidth_40_operating_class_116 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_44_bandwidth_40_operating_class_116
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_44_bandwidth_40_operating_class_116 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_40_bandwidth_40_operating_class_117
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_40_bandwidth_40_operating_class_117 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_48_bandwidth_40_operating_class_117
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_48_bandwidth_40_operating_class_117 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_52_bandwidth_20_operating_class_118
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_52_bandwidth_20_operating_class_118 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_56_bandwidth_20_operating_class_118
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_56_bandwidth_20_operating_class_118 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_60_bandwidth_20_operating_class_118
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_60_bandwidth_20_operating_class_118 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_64_bandwidth_20_operating_class_118
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_64_bandwidth_20_operating_class_118 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_52_bandwidth_40_operating_class_119
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_52_bandwidth_40_operating_class_119 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_60_bandwidth_40_operating_class_119
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_60_bandwidth_40_operating_class_119 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_56_bandwidth_40_operating_class_120
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_56_bandwidth_40_operating_class_120 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_64_bandwidth_40_operating_class_120
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_64_bandwidth_40_operating_class_120 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_100_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_100_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_104_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_104_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_108_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_108_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_112_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_112_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_116_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_116_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_120_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_120_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_124_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_124_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_128_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_128_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_132_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_132_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_136_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_136_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_140_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_140_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_144_bandwidth_20_operating_class_121
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_144_bandwidth_20_operating_class_121 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_100_bandwidth_40_operating_class_122
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_100_bandwidth_40_operating_class_122 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_108_bandwidth_40_operating_class_122
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_108_bandwidth_40_operating_class_122 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_116_bandwidth_40_operating_class_122
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_116_bandwidth_40_operating_class_122 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_124_bandwidth_40_operating_class_122
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_124_bandwidth_40_operating_class_122 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_132_bandwidth_40_operating_class_122
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_132_bandwidth_40_operating_class_122 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_140_bandwidth_40_operating_class_122
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_140_bandwidth_40_operating_class_122 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_104_bandwidth_40_operating_class_123
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_104_bandwidth_40_operating_class_123 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_112_bandwidth_40_operating_class_123
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_112_bandwidth_40_operating_class_123 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_120_bandwidth_40_operating_class_123
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_120_bandwidth_40_operating_class_123 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_128_bandwidth_40_operating_class_123
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_128_bandwidth_40_operating_class_123 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_136_bandwidth_40_operating_class_123
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_136_bandwidth_40_operating_class_123 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_144_bandwidth_40_operating_class_123
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_144_bandwidth_40_operating_class_123 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_149_bandwidth_20_operating_class_124
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_149_bandwidth_20_operating_class_124 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_153_bandwidth_20_operating_class_124
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_153_bandwidth_20_operating_class_124 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_157_bandwidth_20_operating_class_124
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_157_bandwidth_20_operating_class_124 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_20_operating_class_124
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_20_operating_class_124 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_165_bandwidth_20_operating_class_125
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_165_bandwidth_20_operating_class_125 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_169_bandwidth_20_operating_class_125
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_169_bandwidth_20_operating_class_125 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_149_bandwidth_40_operating_class_126
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_149_bandwidth_40_operating_class_126 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_157_bandwidth_40_operating_class_126
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_157_bandwidth_40_operating_class_126 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_153_bandwidth_40_operating_class_127
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_153_bandwidth_40_operating_class_127 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_40_operating_class_127
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_40_operating_class_127 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_36_bandwidth_80_operating_class_128
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_36_bandwidth_80_operating_class_128 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_52_bandwidth_80_operating_class_128
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_52_bandwidth_80_operating_class_128 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_100_bandwidth_80_operating_class_128
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_100_bandwidth_80_operating_class_128 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_116_bandwidth_80_operating_class_128
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_116_bandwidth_80_operating_class_128 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_132_bandwidth_80_operating_class_128
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_132_bandwidth_80_operating_class_128 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_149_bandwidth_80_operating_class_128
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_149_bandwidth_80_operating_class_128 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_36_bandwidth_160_operating_class_129
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_36_bandwidth_160_operating_class_129 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_100_bandwidth_160_operating_class_129
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_100_bandwidth_160_operating_class_129 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_5_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_5_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_9_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_9_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_13_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_13_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_17_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_17_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_21_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_21_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_25_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_25_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_29_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_29_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_33_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_33_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_37_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_37_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_41_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_41_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_45_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_45_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_49_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_49_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_53_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_53_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_57_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_57_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_61_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_61_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_65_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_65_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_69_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_69_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_73_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_73_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_77_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_77_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_81_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_81_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_85_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_85_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_89_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_89_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_93_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_93_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_97_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_97_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_101_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_101_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_105_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_105_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_109_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_109_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_113_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_113_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_117_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_117_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_121_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_121_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_125_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_125_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_129_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_129_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_133_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_133_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_137_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_137_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_141_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_141_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_145_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_145_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_149_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_149_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_153_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_153_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_157_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_157_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_165_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_165_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_169_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_169_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_173_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_173_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_177_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_177_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_181_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_181_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_185_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_185_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_189_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_189_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_193_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_193_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_197_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_197_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_201_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_201_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_205_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_205_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_209_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_209_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_213_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_213_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_217_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_217_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_221_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_221_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_225_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_225_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_229_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_229_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_233_bandwidth_20_operating_class_131
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_233_bandwidth_20_operating_class_131 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_9_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_9_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_17_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_17_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_25_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_25_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_33_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_33_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_41_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_41_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_49_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_49_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_57_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_57_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_65_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_65_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_73_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_73_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_81_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_81_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_89_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_89_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_97_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_97_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_105_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_105_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_113_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_113_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_121_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_121_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_129_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_129_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_137_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_137_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_145_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_145_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_153_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_153_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_169_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_169_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_177_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_177_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_185_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_185_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_193_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_193_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_201_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_201_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_209_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_209_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_217_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_217_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_225_bandwidth_40_operating_class_132
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_225_bandwidth_40_operating_class_132 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_17_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_17_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_33_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_33_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_49_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_49_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_65_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_65_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_81_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_81_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_97_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_97_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_113_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_113_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_129_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_129_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_145_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_145_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_177_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_177_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_193_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_193_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_209_bandwidth_80_operating_class_133
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_209_bandwidth_80_operating_class_133 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_160_operating_class_134
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_1_bandwidth_160_operating_class_134 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_33_bandwidth_160_operating_class_134
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_33_bandwidth_160_operating_class_134 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_65_bandwidth_160_operating_class_134
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_65_bandwidth_160_operating_class_134 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_97_bandwidth_160_operating_class_134
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_97_bandwidth_160_operating_class_134 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_129_bandwidth_160_operating_class_134
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_129_bandwidth_160_operating_class_134 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_160_operating_class_134
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_161_bandwidth_160_operating_class_134 (0 ms)
+[ RUN      ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_193_bandwidth_160_operating_class_134
+[       OK ] ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest.should_return_expected/channel_193_bandwidth_160_operating_class_134 (0 ms)
+[----------] 194 tests from ValidParamsInstance/WirelessUtilsGetOperatingClassByChannelTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 289 tests from 25 test suites ran. (2016 ms total)
+[  PASSED  ] 289 tests.
+<end of output>
+Test time =   2.02 sec
+----------------------------------------------------------
+Test Passed.
+"bcl_unit_tests" end time: Mar 30 21:46 UTC
+"bcl_unit_tests" time elapsed: 00:00:02
+----------------------------------------------------------
+
+5/8 Testing: bwl_dummy_unit_tests
+5/8 Test: bwl_dummy_unit_tests
+Command: "/home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/out/bin/bwl_dummy_unit_tests"
+Directory: /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/common/beerocks/bwl
+"bwl_dummy_unit_tests" start time: Mar 30 21:46 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 13 tests from 5 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from action_frame_parsing_test
+[ RUN      ] action_frame_parsing_test.parse_hex
+[       OK ] action_frame_parsing_test.parse_hex (0 ms)
+[----------] 1 test from action_frame_parsing_test (0 ms total)
+
+[----------] 2 tests from action_frame_body_extract_test
+[ RUN      ] action_frame_body_extract_test.extract_body_ok
+[       OK ] action_frame_body_extract_test.extract_body_ok (0 ms)
+[ RUN      ] action_frame_body_extract_test.frame_too_short
+[       OK ] action_frame_body_extract_test.frame_too_short (0 ms)
+[----------] 2 tests from action_frame_body_extract_test (0 ms total)
+
+[----------] 2 tests from base_wlan_hal_internal_events_test
+[ RUN      ] base_wlan_hal_internal_events_test.process_int_events_is_capped_per_iteration
+2026-03-30 21:46:10,696 DEBUG [default] [user@7f641f70ba29] [virtual bool bwl::base_wlan_hal::process_int_events()] [/home/kavia/workspace/code-generation/prplMesh/common/beerocks/bwl/common/base_wlan_hal.cpp:207] All events received, events= 50
+2026-03-30 21:46:10,696 WARNING [default] process_int_events() called but queue is empty
+2026-03-30 21:46:10,696 DEBUG [default] [user@7f641f70ba29] [virtual bwl::base_wlan_hal::~base_wlan_hal()] [/home/kavia/workspace/code-generation/prplMesh/common/beerocks/bwl/common/base_wlan_hal.cpp:44] Closed internal event descriptor: 6
+[       OK ] base_wlan_hal_internal_events_test.process_int_events_is_capped_per_iteration (1 ms)
+[ RUN      ] base_wlan_hal_internal_events_test.helper_semantics_are_stable
+2026-03-30 21:46:10,696 DEBUG [default] [user@7f641f70ba29] [virtual bwl::base_wlan_hal::~base_wlan_hal()] [/home/kavia/workspace/code-generation/prplMesh/common/beerocks/bwl/common/base_wlan_hal.cpp:44] Closed internal event descriptor: 7
+2026-03-30 21:46:10,696 DEBUG [default] [user@7f641f70ba29] [virtual bwl::base_wlan_hal::~base_wlan_hal()] [/home/kavia/workspace/code-generation/prplMesh/common/beerocks/bwl/common/base_wlan_hal.cpp:44] Closed internal event descriptor: 6
+[       OK ] base_wlan_hal_internal_events_test.helper_semantics_are_stable (0 ms)
+[----------] 2 tests from base_wlan_hal_internal_events_test (1 ms total)
+
+[----------] 2 tests from nl_80211_client_impl_test
+[ RUN      ] nl_80211_client_impl_test.get_interface_info_should_succeed
+wlan0, index: 1, MAC: 01:02:03:04:05:06
+wlan1, index: 1, MAC: 01:02:03:04:05:06
+[       OK ] nl_80211_client_impl_test.get_interface_info_should_succeed (0 ms)
+[ RUN      ] nl_80211_client_impl_test.get_radio_info_should_succeed
+wlan0, band: 255, max_bandwidth: 3, supported_channels: 144, 140, 165, 136, 161, 132, 157, 128, 153, 124, 149, 120, 36, 40, 44, 48, 100, 52, 104, 56, 108, 60, 112, 64, 116
+wlan1, band: 255, max_bandwidth: 3, supported_channels: 144, 140, 165, 136, 161, 132, 157, 128, 153, 124, 149, 120, 36, 40, 44, 48, 100, 52, 104, 56, 108, 60, 112, 64, 116
+[       OK ] nl_80211_client_impl_test.get_radio_info_should_succeed (0 ms)
+[----------] 2 tests from nl_80211_client_impl_test (0 ms total)
+
+[----------] 6 tests from nl80211_client_test
+[ RUN      ] nl80211_client_test.get_channel_utilization_should_succeed_with_100_percent
+[       OK ] nl80211_client_test.get_channel_utilization_should_succeed_with_100_percent (0 ms)
+[ RUN      ] nl80211_client_test.get_channel_utilization_should_succeed_with_50_percent
+[       OK ] nl80211_client_test.get_channel_utilization_should_succeed_with_50_percent (0 ms)
+[ RUN      ] nl80211_client_test.get_channel_utilization_should_succeed_with_0_percent
+[       OK ] nl80211_client_test.get_channel_utilization_should_succeed_with_0_percent (0 ms)
+[ RUN      ] nl80211_client_test.get_channel_utilization_should_fail_if_no_channel_in_use
+[       OK ] nl80211_client_test.get_channel_utilization_should_fail_if_no_channel_in_use (0 ms)
+[ RUN      ] nl80211_client_test.get_channel_utilization_should_fail_if_time_on_is_zero
+[       OK ] nl80211_client_test.get_channel_utilization_should_fail_if_time_on_is_zero (0 ms)
+[ RUN      ] nl80211_client_test.get_channel_utilization_should_fail_if_time_busy_is_greater_than_time_on
+[       OK ] nl80211_client_test.get_channel_utilization_should_fail_if_time_busy_is_greater_than_time_on (0 ms)
+[----------] 6 tests from nl80211_client_test (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 5 test suites ran. (1 ms total)
+[  PASSED  ] 13 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bwl_dummy_unit_tests" end time: Mar 30 21:46 UTC
+"bwl_dummy_unit_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/8 Testing: prplmesh_hostapd_unit_tests
+6/8 Test: prplmesh_hostapd_unit_tests
+Command: "/home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/out/bin/prplmesh_hostapd_unit_tests"
+Directory: /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/common/beerocks/hostapd
+"prplmesh_hostapd_unit_tests" start time: Mar 30 21:46 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 15 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 13 tests from configuration_test
+[ RUN      ] configuration_test.load
+[       OK ] configuration_test.load (0 ms)
+[ RUN      ] configuration_test.store
+[       OK ] configuration_test.store (2 ms)
+[ RUN      ] configuration_test.set_string_head_values
+[       OK ] configuration_test.set_string_head_values (2 ms)
+[ RUN      ] configuration_test.set_int_head_values
+[       OK ] configuration_test.set_int_head_values (2 ms)
+[ RUN      ] configuration_test.get_head_values
+[       OK ] configuration_test.get_head_values (2 ms)
+[ RUN      ] configuration_test.set_string_vap_values
+[       OK ] configuration_test.set_string_vap_values (2 ms)
+[ RUN      ] configuration_test.set_int_vap_values
+[       OK ] configuration_test.set_int_vap_values (1 ms)
+[ RUN      ] configuration_test.get_vap_values
+[       OK ] configuration_test.get_vap_values (1 ms)
+[ RUN      ] configuration_test.disable_all_ap
+[       OK ] configuration_test.disable_all_ap (1 ms)
+[ RUN      ] configuration_test.enable_all_ap
+[       OK ] configuration_test.enable_all_ap (2 ms)
+[ RUN      ] configuration_test.disable_vap
+[       OK ] configuration_test.disable_vap (2 ms)
+[ RUN      ] configuration_test.add_remove_key_value
+[       OK ] configuration_test.add_remove_key_value (2 ms)
+[ RUN      ] configuration_test.itererate_both_containers
+[       OK ] configuration_test.itererate_both_containers (2 ms)
+[----------] 13 tests from configuration_test (21 ms total)
+
+[----------] 2 tests from configuration_parse_edge_cases_test
+[ RUN      ] configuration_parse_edge_cases_test.load_tolerates_malformed_lines
+[       OK ] configuration_parse_edge_cases_test.load_tolerates_malformed_lines (2 ms)
+[ RUN      ] configuration_parse_edge_cases_test.duplicate_head_keys_first_occurrence_wins
+[       OK ] configuration_parse_edge_cases_test.duplicate_head_keys_first_occurrence_wins (1 ms)
+[----------] 2 tests from configuration_parse_edge_cases_test (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 15 tests from 2 test suites ran. (24 ms total)
+[  PASSED  ] 15 tests.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"prplmesh_hostapd_unit_tests" end time: Mar 30 21:46 UTC
+"prplmesh_hostapd_unit_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/8 Testing: beerocks_agent_unit_tests
+7/8 Test: beerocks_agent_unit_tests
+Command: "/home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/out/bin/beerocks_agent_unit_tests"
+Directory: /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/agent/src/beerocks/slave
+"beerocks_agent_unit_tests" start time: Mar 30 21:46 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 7 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from gate_beacon_query_test
+[ RUN      ] gate_beacon_query_test.loading_vs_from_1905_beacon_query
+2026-03-30 21:46:10,733 ERROR [default] TLVF: ssid length is smaller than requested length
+[       OK ] gate_beacon_query_test.loading_vs_from_1905_beacon_query (0 ms)
+[----------] 1 test from gate_beacon_query_test (0 ms total)
+
+[----------] 1 test from gate_beacon_response_test
+[ RUN      ] gate_beacon_response_test.loading_1905_from_vs_response
+[       OK ] gate_beacon_response_test.loading_1905_from_vs_response (0 ms)
+[----------] 1 test from gate_beacon_response_test (0 ms total)
+
+[----------] 5 tests from TrafficSeparationUtilsTest
+[ RUN      ] TrafficSeparationUtilsTest.ResolveKeepsValidProfileDisallowFlags
+[       OK ] TrafficSeparationUtilsTest.ResolveKeepsValidProfileDisallowFlags (0 ms)
+[ RUN      ] TrafficSeparationUtilsTest.ResolveFailsWithoutOverrideWhenFlagsAreInvalid
+[       OK ] TrafficSeparationUtilsTest.ResolveFailsWithoutOverrideWhenFlagsAreInvalid (0 ms)
+[ RUN      ] TrafficSeparationUtilsTest.ResolveAppliesForceDisallowProfile1Policy
+[       OK ] TrafficSeparationUtilsTest.ResolveAppliesForceDisallowProfile1Policy (0 ms)
+[ RUN      ] TrafficSeparationUtilsTest.ResolveAppliesForceDisallowProfile2Policy
+[       OK ] TrafficSeparationUtilsTest.ResolveAppliesForceDisallowProfile2Policy (0 ms)
+[ RUN      ] TrafficSeparationUtilsTest.UntaggedModeMatchesResolvedProfileDisallowFlags
+[       OK ] TrafficSeparationUtilsTest.UntaggedModeMatchesResolvedProfileDisallowFlags (0 ms)
+[----------] 5 tests from TrafficSeparationUtilsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 3 test suites ran. (0 ms total)
+[  PASSED  ] 7 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"beerocks_agent_unit_tests" end time: Mar 30 21:46 UTC
+"beerocks_agent_unit_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/8 Testing: db_unit_tests
+8/8 Test: db_unit_tests
+Command: "/home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/out/bin/db_unit_tests"
+Directory: /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/controller/src/beerocks/master/db/unit_tests
+"db_unit_tests" start time: Mar 30 21:46 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/kavia/workspace/code-generation/prplMesh/build_clean_ctest_run_20260330_214500/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 15 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 7 tests from DbTest
+[ RUN      ] DbTest.dm_should_have_controller_bridge
+2026-03-30 21:46:10,739 WARNING [default] loglevel invalid token: 
+2026-03-30 21:46:10,739 WARNING [default] loglevel invalid token: 
+ERROR 21:46:10:740 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+[       OK ] DbTest.dm_should_have_controller_bridge (1 ms)
+[ RUN      ] DbTest.test_add_node_radio
+ERROR 21:46:10:740 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+ERROR 21:46:10:740 <140074570241856> db.cpp[6098] --> radio 46:55:66:77:00:21 not found
+[       OK ] DbTest.test_add_node_radio (0 ms)
+[ RUN      ] DbTest.test_add_vap
+ERROR 21:46:10:740 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+ERROR 21:46:10:740 <140074570241856> db.cpp[6098] --> radio 46:55:66:77:00:21 not found
+[       OK ] DbTest.test_add_vap (1 ms)
+[ RUN      ] DbTest.test_set_ap_ht_capabilities
+ERROR 21:46:10:741 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+ERROR 21:46:10:741 <140074570241856> db.cpp[6098] --> radio 46:55:66:77:00:21 not found
+ERROR 21:46:10:741 <140074570241856> db.cpp[6487] --> Failed to get radio with mac: 46:55:66:77:00:21
+ERROR 21:46:10:741 <140074570241856> db.cpp[6098] --> radio 46:55:66:77:00:22 not found
+ERROR 21:46:10:741 <140074570241856> db.cpp[6487] --> Failed to get radio with mac: 46:55:66:77:00:22
+[       OK ] DbTest.test_set_ap_ht_capabilities (0 ms)
+[ RUN      ] DbTest.test_add_hostap_supported_operating_class
+ERROR 21:46:10:741 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+ERROR 21:46:10:741 <140074570241856> db.cpp[6098] --> radio 46:55:66:77:00:21 not found
+ERROR 21:46:10:741 <140074570241856> son_wireless_utils.cpp[1644] --> reserved operating class 255
+ERROR 21:46:10:741 <140074570241856> son_wireless_utils.cpp[1662] --> reserved operating class 255
+ERROR 21:46:10:742 <140074570241856> db.cpp[2434] --> No supported channels
+[       OK ] DbTest.test_add_hostap_supported_operating_class (1 ms)
+[ RUN      ] DbTest.test_add_current_op_class
+ERROR 21:46:10:742 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+ERROR 21:46:10:742 <140074570241856> db.cpp[6942] --> op_class_path_instance is empty
+[       OK ] DbTest.test_add_current_op_class (0 ms)
+[ RUN      ] DbTest.test_set_vap_stats_info
+ERROR 21:46:10:742 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+ERROR 21:46:10:742 <140074570241856> db.cpp[5242] --> Failed to get BSS with BSSID: 46:55:66:77:00:03
+[       OK ] DbTest.test_set_vap_stats_info (0 ms)
+[----------] 7 tests from DbTest (3 ms total)
+
+[----------] 7 tests from DbTestRadio1Sta1
+[ RUN      ] DbTestRadio1Sta1.test_set_sta_stats_info
+ERROR 21:46:10:743 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+[       OK ] DbTestRadio1Sta1.test_set_sta_stats_info (1 ms)
+[ RUN      ] DbTestRadio1Sta1.test_set_sta_capabilities
+ERROR 21:46:10:743 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+[       OK ] DbTestRadio1Sta1.test_set_sta_capabilities (1 ms)
+[ RUN      ] DbTestRadio1Sta1.test_set_sta_link_metrics
+ERROR 21:46:10:744 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+[       OK ] DbTestRadio1Sta1.test_set_sta_link_metrics (0 ms)
+[ RUN      ] DbTestRadio1Sta1.test_add_sta_twice_with_same_mac
+ERROR 21:46:10:745 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+ERROR 21:46:10:745 <140074570241856> db.cpp[527] --> Failed to get sBss: 46:55:66:77:00:21
+ERROR 21:46:10:745 <140074570241856> db.cpp[6556] --> Failed to get BSS with BSSID: 46:55:66:77:00:21
+ERROR 21:46:10:745 <140074570241856> db.cpp[542] --> Failed to add station datamodel, mac: 46:55:66:77:00:31
+[       OK ] DbTestRadio1Sta1.test_add_sta_twice_with_same_mac (1 ms)
+[ RUN      ] DbTestRadio1Sta1.test_remove_sta
+ERROR 21:46:10:745 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+[       OK ] DbTestRadio1Sta1.test_remove_sta (0 ms)
+[ RUN      ] DbTestRadio1Sta1.test_dhcp_v4_lease_sta
+ERROR 21:46:10:746 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+[       OK ] DbTestRadio1Sta1.test_dhcp_v4_lease_sta (1 ms)
+[ RUN      ] DbTestRadio1Sta1.test_dhcp_v6_lease_sta
+ERROR 21:46:10:746 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+[       OK ] DbTestRadio1Sta1.test_dhcp_v6_lease_sta (0 ms)
+[----------] 7 tests from DbTestRadio1Sta1 (4 ms total)
+
+[----------] 1 test from DbTestInterface1
+[ RUN      ] DbTestInterface1.test_interface_1_creation
+ERROR 21:46:10:747 <140074570241856> db.cpp[142] --> Could not find Agent: 46:55:66:77:00:00 in m_agents
+[       OK ] DbTestInterface1.test_interface_1_creation (1 ms)
+[----------] 1 test from DbTestInterface1 (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 15 tests from 3 test suites ran. (8 ms total)
+[  PASSED  ] 15 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"db_unit_tests" end time: Mar 30 21:46 UTC
+"db_unit_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 30 21:46 UTC
