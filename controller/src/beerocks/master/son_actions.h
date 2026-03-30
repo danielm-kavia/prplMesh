@@ -31,6 +31,28 @@ public:
                                             task_pool &tasks, std::string client_mac);
     static bool add_station_to_default_location(db &database, std::string client_mac);
     static void unblock_sta(db &database, ieee1905_1::CmduMessageTx &cmdu_tx, std::string sta_mac);
+
+    // PUBLIC_INTERFACE
+    /**
+     * @brief Block a STA from associating to BSSes with the same SSID as the given BSSID.
+     *
+     * This mirrors unblock_sta() behavior and provides a single canonical enforcement pathway for
+     * onboarding approval decisions (deny -> block, approve -> unblock).
+     *
+     * Contract:
+     *  - Inputs:
+     *      - sta_mac: STA MAC string in canonical form.
+     *      - bssid: BSSID (canonical string) used to resolve SSID scope. If empty/invalid, falls back
+     *        to the station's current parent BSSID from DB (if present).
+     *      - duration_sec: Validity period for TIMED_BLOCK in seconds.
+     *  - Side effects:
+     *      - Sends CLIENT_ASSOCIATION_CONTROL_REQUEST_MESSAGE(s) to relevant Agents.
+     *  - Errors:
+     *      - Best-effort; failures are logged per Agent/BSS.
+     */
+    static void block_sta(db &database, ieee1905_1::CmduMessageTx &cmdu_tx, std::string sta_mac,
+                          const std::string &bssid, int duration_sec);
+
     static int steer_sta(db &database, ieee1905_1::CmduMessageTx &cmdu_tx, task_pool &tasks,
                          std::string sta_mac, std::string chosen_hostap,
                          const std::string &triggered_by, const std::string &steering_type,

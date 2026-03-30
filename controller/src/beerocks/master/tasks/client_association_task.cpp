@@ -8,6 +8,7 @@
 
 #include "client_association_task.h"
 #include "../son_actions.h"
+#include "../onboarding/onboarding_approval_adapter.h"
 
 #include <bcl/beerocks_utils.h>
 #include <bcl/beerocks_wifi_channel.h>
@@ -19,6 +20,52 @@
 using namespace beerocks;
 using namespace net;
 using namespace son;
+
+namespace {
+
+// Pending gating defaults (Option A, local daemon integration).
+// - pending block is applied only when daemon is reachable (to avoid lockouts when daemon is absent).
+// - deny block is stronger/longer to enforce explicit denial.
+constexpr int k_pending_block_sec = 60 * 60;      // 1 hour
+constexpr int k_deny_block_sec    = 60 * 60 * 24; // 24 hours
+
+// A single adapter instance per process.
+// Socket path is the default stable contract (see adapter header).
+onboarding_approval::UdsJsonApprovalAdapter &approval_adapter()
+{
+    static onboarding_approval::UdsJsonApprovalAdapter adapter;
+    return adapter;
+}
+
+void apply_onboarding_decision(db &database, ieee1905_1::CmduMessageTx &cmdu_tx,
+                               const std::string &sta_mac_str, const std::string &bssid_str,
+                               const onboarding_approval::DecisionResult &decision)
+{
+    if (!decision.has_decision) {
+        return;
+    }
+
+    if (decision.approved) {
+        LOG(INFO) << "Onboarding approval: APPROVE for STA " << sta_mac_str
+                  << " (bssid=" << bssid_str << ")";
+        son_actions::unblock_sta(database, cmdu_tx, sta_mac_str);
+        return;
+    }
+
+    if (decision.denied) {
+        LOG(INFO) << "Onboarding approval: DENY for STA " << sta_mac_str << " (bssid=" << bssid_str
+                  << "), applying block + disconnect";
+        son_actions::block_sta(database, cmdu_tx, sta_mac_str, bssid_str, k_deny_block_sec);
+
+        // Enforce immediately if currently connected to this BSSID.
+        // This reuses existing disconnect enforcement flow.
+        son_actions::disconnect_client(database, cmdu_tx, sta_mac_str, bssid_str,
+                                       eDisconnect_Type_Disassoc, 0);
+        return;
+    }
+}
+
+} // namespace
 
 client_association_task::client_association_task(db &database_, ieee1905_1::CmduMessageTx &cmdu_tx_,
                                                  task_pool &tasks_, const std::string &task_name_)
@@ -73,6 +120,32 @@ bool client_association_task::verify_sta_association(const sMacAddr &src_mac,
         wfa_map::tlvClientAssociationEvent::eAssociationEvent::CLIENT_HAS_JOINED_THE_BSS) {
         station->assoc_timestamp = ambiorix_dm->get_datamodel_time_format();
         dm_add_sta_association_event(sta_assoc_tlv->client_mac(), sta_assoc_tlv->bssid());
+
+        // Option A integration point:
+        // Emit a "pending" event to a local on-box daemon and apply approve/deny enforcement.
+        const auto sta_mac_str   = tlvf::mac_to_string(sta_assoc_tlv->client_mac());
+        const auto bssid_str     = tlvf::mac_to_string(sta_assoc_tlv->bssid());
+        const auto agent_al_str  = tlvf::mac_to_string(src_mac);
+        const auto ssid          = m_database.get_bss_ssid(sta_assoc_tlv->bssid());
+        const std::string stage  = "assoc";
+        const std::string frame  = ""; // not available yet at this stage
+
+        onboarding_approval::PendingClientEvent pending;
+        pending.client_mac   = sta_mac_str;
+        pending.bssid        = bssid_str;
+        pending.agent_al_mac = agent_al_str;
+        pending.ssid         = ssid;
+        pending.stage        = stage;
+        pending.assoc_frame  = frame;
+
+        auto decision = approval_adapter().send_pending_client_event(pending);
+
+        // Apply pending gating only when daemon is reachable (fail-open when absent).
+        if (decision.daemon_reachable) {
+            son_actions::block_sta(m_database, m_cmdu_tx, sta_mac_str, bssid_str, k_pending_block_sec);
+        }
+
+        apply_onboarding_decision(m_database, m_cmdu_tx, sta_mac_str, bssid_str, decision);
 
         /*
          * Even though client capabilities exist in a legacy vendor
@@ -155,6 +228,28 @@ bool client_association_task::handle_cmdu_1905_client_capability_report_message(
         beerocks::utils::dump_buffer(client_capability_report_tlv->association_frame(),
                                      client_capability_report_tlv->association_frame_length());
     LOG(DEBUG) << "(Re)Association Request frame= " << re_assoc_frame;
+
+    // Option A integration point (telemetry enrichment):
+    // After we have the association frame, emit a second pending telemetry update so the daemon
+    // can make a more informed approve/deny decision (and so we can apply it).
+    {
+        const auto sta_mac_str   = tlvf::mac_to_string(sta_mac);
+        const auto bssid_str     = tlvf::mac_to_string(client_info_tlv->bssid());
+        const auto agent_al_str  = tlvf::mac_to_string(src_mac);
+        const auto ssid          = m_database.get_bss_ssid(client_info_tlv->bssid());
+        const std::string stage  = "capability_report";
+
+        onboarding_approval::PendingClientEvent pending;
+        pending.client_mac   = sta_mac_str;
+        pending.bssid        = bssid_str;
+        pending.agent_al_mac = agent_al_str;
+        pending.ssid         = ssid;
+        pending.stage        = stage;
+        pending.assoc_frame  = re_assoc_frame;
+
+        auto decision = approval_adapter().send_pending_client_event(pending);
+        apply_onboarding_decision(m_database, m_cmdu_tx, sta_mac_str, bssid_str, decision);
+    }
 
     /*
      * Client capability data is latest assoc/reassoc request frame data

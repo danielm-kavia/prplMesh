@@ -147,6 +147,59 @@ void son_actions::unblock_sta(db &database, ieee1905_1::CmduMessageTx &cmdu_tx, 
     }
 }
 
+void son_actions::block_sta(db &database, ieee1905_1::CmduMessageTx &cmdu_tx, std::string sta_mac,
+                            const std::string &bssid, int duration_sec)
+{
+    // NOTE: We intentionally use TIMED_BLOCK with an explicit duration to avoid relying on any
+    // ambiguous agent behavior around validity for BLOCK vs TIMED_BLOCK.
+    LOG(DEBUG) << "blocking " << sta_mac << " from network for " << duration_sec << " seconds";
+
+    // Resolve SSID scope:
+    // Prefer the BSSID provided by the caller (e.g. association event), otherwise fall back to the
+    // STA parent BSSID from DB.
+    std::string scope_bssid = bssid;
+    if (scope_bssid.empty() || scope_bssid == network_utils::ZERO_MAC_STRING) {
+        scope_bssid = database.get_sta_parent(sta_mac);
+    }
+    if (scope_bssid.empty() || scope_bssid == network_utils::ZERO_MAC_STRING) {
+        LOG(WARNING) << "block_sta: cannot resolve scope BSSID for STA " << sta_mac
+                     << " (no bssid arg and no parent in DB)";
+        return;
+    }
+
+    const auto ssid = database.get_bss_ssid(tlvf::mac_from_string(scope_bssid));
+    if (ssid.empty()) {
+        LOG(WARNING) << "block_sta: resolved empty SSID for scope BSSID " << scope_bssid
+                     << ", STA " << sta_mac;
+        // Continue anyway (best-effort) but we will not find matching BSSes.
+    }
+
+    auto hostaps = database.get_active_radios();
+    std::unordered_set<sMacAddr> block_list{tlvf::mac_from_string(sta_mac)};
+
+    for (auto &hostap : hostaps) {
+        std::shared_ptr<Agent::sRadio> radio =
+            database.get_radio_by_uid(tlvf::mac_from_string(hostap));
+        if (!radio) {
+            continue;
+        }
+
+        for (const auto &bss : radio->bsses) {
+            if (!ssid.empty() && bss.second->ssid != ssid) {
+                continue;
+            }
+            std::shared_ptr<Agent> agent = database.get_agent_by_radio_uid(radio->radio_uid);
+            if (!agent) {
+                continue;
+            }
+
+            son_actions::send_client_association_control(
+                database, cmdu_tx, agent->al_mac, bss.second->bssid, block_list, duration_sec,
+                wfa_map::tlvClientAssociationControlRequest::TIMED_BLOCK);
+        }
+    }
+}
+
 int son_actions::steer_sta(db &database, ieee1905_1::CmduMessageTx &cmdu_tx, task_pool &tasks,
                            std::string sta_mac, std::string chosen_hostap,
                            const std::string &triggered_by, const std::string &steering_type,
